@@ -1,5 +1,9 @@
 # Welcome to `git-school`!
 
+![XKCD Git Comic](./img/git_xkcd.png)
+
+Credit: XKCD, https://xkcd.com/1597/
+
 ## Goal
 
 The goal of `git-school` is to get you up and running with the following:
@@ -82,6 +86,8 @@ but I will explain the main commands you need to be familiar with below. This
 list is not exhaustive, nor will some of the commands make sense until you have
 used them a few times:
 
+### Basic Commands
+
 - `git branch` - list the branches in your local repository, with an asterisk
   on the branch that you have checked out
 - `git branch <new_branch>` - create a new branch, named `<new_branch>`
@@ -93,4 +99,8 @@ used them a few times:
   "staging area" so you can commit them
   - You can use `git add -A` to add all changed files rather than typing them
     out individually
-- `git commit -m "<commit message>"` -
+- `git commit -m "<commit message>"` - commit your changes to your branch with
+  the commit message "`<commit message>`"
+- `git pull origin master` - fetch the current status of the master branch on
+  the remote repository, then merge it into my current branch - In effect, this updates the branch you are working on with any changes
+  that others have made to the master branch on the remote repository
