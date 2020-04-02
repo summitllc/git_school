@@ -13,8 +13,7 @@ The goal of `git-school` is to get you up and running with the following:
 
 To do any of this cool stuff, you need to install `git`:
 
-- [ ] Download `git` here:
-      [https://git-scm.com/downloads](https://git-scm.com/downloads)
+- [ ] Download `git` here: https://git-scm.com/downloads
 - [ ] You can follow all of the defaults during installation
 
 Check that you successfully installed `git` by:
@@ -48,8 +47,7 @@ password in repeatedly:
 
 ### Associate Public Key with GitLab Account
 
-- [ ] Go to the desired GitLab server (typically
-      [F3-Git](http://f3-git.summit.local/))
+- [ ] Go to the desired GitLab server (typically http://f3-git.summit.local/)
 - [ ] If you don't already have one, create an account
 - [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH Keys`
 - [ ] Back in Windows Explorer, open your public key in a text editor
@@ -61,18 +59,38 @@ password in repeatedly:
 
 ### Clone a Project (this one!) to Test Everything So Far
 
-- [ ] Go to the
-      [GitLab page for this project](http://f3-git.summit.local/data-science-team/git-school).
+- [ ] Go to the GitLab page for this project:
+      http://f3-git.summit.local/data-science-team/git-school.
 - [ ] Copy the SSH URL for the project, which is located just underneath the
-      title (`git-school`) - ensure it says `SSH`, not `HTTP`, just to the left
+      title, `git-school` - ensure it says `SSH`, not `HTTP`, just to the left
       of the URL
 - [ ] In `Git Bash`, navigate to the directory where you want to create your
       local copy of this project (I recommend your Documents folder,
-      `C:/Users/<first.last>/Documents`) - [ ] `cd ~/Documents`
+      `C:/Users/<first.last>/Documents`)
+  - [ ] `cd ~/Documents`
 - [ ] Clone the project with
       `git clone git@f3-git.summit.local:data-science-team/git-school.git`
 
 You should have a copy of the project files in
-`C:/Users/<first.last>/Documents/git-school`
+`C:/Users/<first.last>/Documents/git-school`.
 
 ## Git Workflow
+
+Now you are ready to contribute to the project, but you need to understand the
+`git` workflow. As always, you should read the [docs](https://git-scm.com/docs),
+but I will explain the main commands you need to be familiar with below. This
+list is not exhaustive, nor will some of the commands make sense until you have
+used them a few times:
+
+- `git branch` - list the branches in your local repository, with an asterisk
+  on the branch that you have checked out
+- `git branch <new_branch>` - create a new branch, named `<new_branch>`
+- `git checkout <branch_to_checkout>` - checks out the branch named
+  `<branch_to_checkout>`
+- `git status` - shows the working tree status, i.e. the changes you've made
+  since your last commit
+- `git add <file1> <file2>` - add changed files `file1` and `file2` to the
+  "staging area" so you can commit them
+  - You can use `git add -A` to add all changed files rather than typing them
+    out individually
+- `git commit -m "<commit message>"` -
