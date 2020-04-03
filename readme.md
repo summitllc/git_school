@@ -115,9 +115,9 @@ point, you can merge it into the `master` branch to deploy your new feature.
 Now, we are going to combine these two concepts to clear up a common tripping
 point: conflating repositories with branches. As mentioned earlier, each
 repository is a complete copy of the entire codebase, meaning it has every
-branch in the entire project. Note: as teammates work in the local repository,
+branch in the entire project. Note: as teammates work in their local repo,
 what is contained in the origin and everyone's local repos begin to deviate,
-but with git we can periodically sync them back up.
+but with `git` we can periodically sync them back up.
 
 ![Combining Distribution and Branching](./img/git_concepts_combining_distributed_and_branching.png)
 
