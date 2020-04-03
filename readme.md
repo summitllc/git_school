@@ -91,6 +91,24 @@ work on separate, potentially unconnected systems, and periodically sync their c
 
 ![Distributed Version Control](./img/git_distributed_version_control.png)
 
+### Branching
+
+In `git`, a branch is a series of **commits**, which are like save points in
+your code.
+
+![Commits forming a branch](./img/branching_1_commits_forming_a_branch.png)
+
+When you start a new project, `git` creates a default branch called `master`.
+Most people use this `master` branch to serve as their production branch, but
+you can rename it or use a different branch as your "ground truth"/production
+branch if you wanted to.
+
+Rather than developing new features on the `master` branch, it is best practice
+to branch off until the feature is complete, tested, and peer-reviewed. At this
+point, you can merge it into the `master` branch to deploy your new feature.
+
+![Using a working branch](./img/branching_2_working_branch.png)
+
 ## Git Workflow
 
 Now you are ready to contribute to the project, but you need to understand the
