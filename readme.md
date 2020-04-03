@@ -167,7 +167,7 @@ used them a few times:
 
 ### Updating your Working Branch with Origin Master
 
-### Pushing Your Workin Branch to Origin
+### Pushing Your Working Branch to Origin
 
 ### Merging Your Working Branch into Remote Origin
 
