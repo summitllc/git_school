@@ -87,7 +87,8 @@ There are two high-level concepts you should understand before starting to use
 ### Distributed Version Control
 
 `git` is a distributed version control system. This means that collaborators
-work on separate, potentially unconnected systems, and periodically sync their changes to a shared central repository of code.
+work on separate, potentially unconnected systems, and periodically sync their
+changes to a shared central repository of code.
 
 ![Distributed Version Control](./img/git_distributed_version_control.png)
 
@@ -108,6 +109,17 @@ to branch off until the feature is complete, tested, and peer-reviewed. At this
 point, you can merge it into the `master` branch to deploy your new feature.
 
 ![Using a working branch](./img/branching_2_working_branch.png)
+
+### Combining Distributed Version Control and Branching into a Mental Model
+
+Now, we are going to combine these two concepts to clear up a common tripping
+point: conflating repositories with branches. As mentioned earlier, each
+repository is a complete copy of the entire codebase, meaning it has every
+branch in the entire project. Note: as teammates work in the local repository,
+what is contained in the origin and everyone's local repos begin to deviate,
+but with git we can periodically sync them back up.
+
+![Combining Distribution and Branching](./img/git_concepts_combining_distributed_and_branching.png)
 
 ## Git Workflow
 
@@ -133,5 +145,20 @@ used them a few times:
 - `git commit -m "<commit message>"` - commit your changes to your branch with
   the commit message "`<commit message>`"
 - `git pull origin master` - fetch the current status of the master branch on
-  the remote repository, then merge it into my current branch - In effect, this updates the branch you are working on with any changes
-  that others have made to the master branch on the remote repository
+  the remote repository, then merge it into my current branch - In effect, this
+  updates the branch you are working on with any changes that others have made
+  to the master branch on the remote repository
+
+### Cloning a Repo
+
+### Making a Working Branch
+
+### Commiting Changes to your Working Branch
+
+### Updating your Working Branch with Origin Master
+
+### Pushing Your Workin Branch to Origin
+
+### Merging Your Working Branch into Remote Origin
+
+### Updating your Local Master
