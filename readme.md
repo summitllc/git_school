@@ -11,6 +11,7 @@ The goal of `git-school` is to get you up and running with the following:
 - a SSH key that you can use to authenticate into our GitLab server (rather than
   typing your username and password constantly)
 - an account on our GitLab server
+- a basic conceptual understanding of `git`
 - a basic `git` workflow for coding collaboratively with other Summiteers
 
 ## Install `git`
@@ -77,6 +78,18 @@ password in repeatedly:
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
+
+## Git Concepts
+
+There are two high-level concepts you should understand before starting to use
+`git`: **Distributed Version Control** and **Branching**.
+
+### Distributed Version Control
+
+`git` is a distributed version control system. This means that collaborators
+work on separate, potentially unconnected systems, and periodically sync their changes to a shared central repository of code.
+
+![Distributed Version Control](./img/git_distributed_version_control.png)
 
 ## Git Workflow
 
