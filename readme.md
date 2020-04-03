@@ -122,12 +122,6 @@ but with `git` we can periodically sync them back up.
 ![Combining Distribution and Branching](./img/git_concepts_combining_distributed_and_branching.png)
 
 When first starting to use `git`, some people have trouble keeping the concepts
-of repositories and branches separate. Keep in mind that if you have a local
-repository, then you have all of the branches that were on the remote
-repository the last time you synced-up with it (`git pull`ed), plus any branches
-or commits that you have created locally. Also keep in mind that until you
-
-When first starting to use `git`, some people have trouble keeping the concepts
 of repositories and branches separate. Keep in mind that:
 
 - if you have a local repo, then you have all of the branches that were on the
