@@ -161,6 +161,21 @@ used them a few times:
 
 ### Cloning a Repo
 
+For now, we are going to assume you want to work on an existing project. To do
+this, you are going to use the `git clone` command, which is something you may
+have done above to test that your SSH key is working. `git clone` will create
+a new local respository (in the directory where you execute the command)
+associated with a remote repository. If you haven't already done so, clone this
+repository with the following command in your `Git Bash` terminal:
+
+```
+cd ~/Documents
+git clone git@f3-git.summit.local:data-science-team/git-school.git
+```
+
+_Note: In this example, the first line changes my working directory to my
+Documents, which is where I am choosing to create my local repository._
+
 ### Making a Working Branch
 
 ### Commiting Changes to your Working Branch
