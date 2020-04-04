@@ -231,7 +231,28 @@ checking out a new branch) in one simple command. It uses the `-b` option or
 git checkout -b my_new_branch
 ```
 
-### Commiting Changes to your Working Branch
+### Adding and Commiting Changes to your Working Branch
+
+Now that you have created and checked out a working branch, you are ready to
+get writing code. This section demonstrates how to make a commit to the
+`my_new_branch` branch. Follow along with whatever branch you created.
+
+#### Working Tree and Staging Area
+
+This is where we need to introduce more `git` concepts: the **Working Tree**
+and the **Staging Area**:
+
+When you work on code, `git` tracks your changes (modified, added, deleted
+files and directories). When you are ready to commit your changes (i.e. create
+a "save point" in the project's history), you have to tell `git` which changes
+to include in the commit. Most of the time, you will include all changes, but
+sometimes it can be useful to be able to exclude the changes you have made to
+some files.
+
+To do this, we use the staging area:
+
+![Git Working Tree and Staging Area](./img/git_working_tree.png)
+Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
 
 ### Updating your Working Branch with Origin Master
 
