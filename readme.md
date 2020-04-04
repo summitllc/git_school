@@ -165,8 +165,10 @@ For now, we are going to assume you want to work on an existing project. To do
 this, you are going to use the `git clone` command, which is something you may
 have done above to test that your SSH key is working. `git clone` will create
 a new local respository (in the directory where you execute the command)
-associated with a remote repository. If you haven't already done so, clone this
-repository with the following command in your `Git Bash` terminal:
+associated with a remote repository.
+
+- [ ] If you haven't already done so, clone this repository with the following
+      commands in your `Git Bash` terminal:
 
 ```
 cd ~/Documents
@@ -176,7 +178,58 @@ git clone git@f3-git.summit.local:data-science-team/git-school.git
 _Note: In this example, the first line changes my working directory to my
 Documents, which is where I am choosing to create my local repository._
 
+After this command runs, check for a new directory named `git-school`in your
+working directory. Navigate to this new directory in File Explorer. If you
+have enabled viewing of hidden items, you will notice a `.git` directory
+in this directory. This `.git` directory is what makes its parent directory a
+`git` repository. The `.git` directory is where all the `git` magic occurs. Mess
+around inside there at your own peril!
+
 ### Making a Working Branch
+
+Execute the `git branch` command to see your local repo's branches. The one with
+an asterisk is the branch you currently have checked out. Also notice that
+`Git Bash` shows you your current branch on the line above the command prompt,
+if your working directory is, in fact, a `git` repo:
+
+```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
+$ git branch
+* master
+```
+
+We discussed how it's best practice to do your development on a working branch,
+rather than on master. So, let's make a new branch by passing an additional
+argument, the name of our new branch, to `git branch <new_branch_name>`:
+
+```
+git branch my_new_branch
+```
+
+_Note: in practice, you should give your branches names descriptive of what
+feature is being developed, what bug is being fixed, etc., rather than something
+like "tom_branch"._
+
+Now, if you run `git branch` again, you will see your new branch:
+
+```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
+$ git branch
+* master
+  my_new_branch
+```
+
+Notice that we still have `master` checked out. Use `git checkout my_new_branch`
+to checkout your newly created branch.
+
+That's it for creating a new branch, but I will point out one nice shortcut to
+impress people at parties. You can accomplish both of these steps (creating and
+checking out a new branch) in one simple command. It uses the `-b` option or
+"flag" available in the `git checkout` command:
+
+```
+git checkout -b my_new_branch
+```
 
 ### Commiting Changes to your Working Branch
 
