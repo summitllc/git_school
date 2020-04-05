@@ -25,6 +25,7 @@ Check that you successfully installed `git` by:
 
 - [ ] Opening the `Git Bash` application
 - [ ] In the `Git Bash` terminal that opens, issue this command: `git --version`
+  - See [linux_command_line.md](./linux_command_line.md) for a short tutorial on using `Git Bash`
 - [ ] If you do not have `Git Bash` installed or you get an error from
       `git --version`, you have a problem.
 
@@ -55,11 +56,14 @@ password in repeatedly:
 - [ ] Go to the desired GitLab server (typically http://f3-git.summit.local/)
 - [ ] If you don't already have one, create an account
 - [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH Keys`
-- [ ] Back in Windows Explorer, open your public key in a text editor
+- [ ] Back in File Explorer, open your public key in a text editor
   - [ ] Right-click on `id_rsa.pub` &rarr; 'Open With' &rarr; 'Notepad',
         for example
-- [ ] Copy the entire contents of your public key into the 'Key' section of
-      the SSH Key
+- [ ] In GitLab, copy the entire contents of your public key into the 'Key'
+      section
+- [ ] Click into the 'Title' field. It should auto-populate with your email
+      address, but you can change this to something more descriptive if you desire.
+  - For example: `YYYYMMDD_Summit_laptop`
 - [ ] Click 'Add key'
 
 ### Clone a Project (this one!) to Test Everything So Far
@@ -75,6 +79,13 @@ password in repeatedly:
   - [ ] `cd ~/Documents`
 - [ ] Clone the project with
       `git clone git@f3-git.summit.local:data-science-team/git-school.git`
+
+  - If you get the message below, answer `yes` to continue:
+    ```
+    The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
+    ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
@@ -110,7 +121,7 @@ point, you can merge it into the `master` branch to deploy your new feature.
 
 ![Using a working branch](./img/branching_2_working_branch.png)
 
-### Combining Distributed Version Control and Branching into a Mental Model
+### Combining Distributed Version Control and Branching
 
 Now, we are going to combine these two concepts to clear up a common tripping
 point: conflating repositories with branches. As mentioned earlier, each
