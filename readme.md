@@ -81,11 +81,12 @@ password in repeatedly:
       `git clone git@f3-git.summit.local:data-science-team/git-school.git`
 
   - If you get the message below, answer `yes` to continue:
-    ```
-    The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
-    ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
-    Are you sure you want to continue connecting (yes/no/[fingerprint])?
-    ```
+
+        ```
+        The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
+        ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
+        Are you sure you want to continue connecting (yes/no/[fingerprint])?
+        ```
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
