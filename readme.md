@@ -263,7 +263,8 @@ sometimes it can be handy to be able to exclude changes to some files.
 
 To do this, we use the staging area:
 
-![Git Working Tree and Staging Area](./img/git_working_tree.png)
+![Git Working Tree and Staging Area](./img/git_working_tree.png)_Git Workflow_
+
 Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
 
 So as you make changes to the files on your working branch, they are saved
@@ -302,8 +303,8 @@ Changes to be committed:
 ```
 
 Now `git` is telling me that `my_new_file.txt` is staged to be committed. The
-figure above gives a visual reference of how I just used `git add` to move
-changes from the `working tree` to the `staging area`. Now we can modify
+Git Workflow figure above gives a visual reference of how I just used `git add`
+to move changes from the `working tree` to the `staging area`. Now we can modify
 `my_new_file.txt` and see what happens when you change a file `git` is already
 tracking. After opening the file, adding some text to it ("Hello, World!"), and
 saving it, I run `git status`:
@@ -323,6 +324,29 @@ no changes added to commit (use "git add" and/or "git commit -a")
 This output is very similar to the previous `git status`, except now
 `my_new_file.txt` is already being tracked but `git` recognized that it has been
 modified.
+
+In the Git Workflow figure, we still have not moved past the second column
+(`staging area`). Let's do that now by using `git commit` to create a "save
+point" in the history of this working branch, `my_new_branch`. I will follow
+that up with a `git status` to demonstrate that my working tree will be clean
+following a commit (i.e. I won't have any changes since my last commit
+immediately after committing).
+
+_Note: I am going to add the `-m` option or "flag" to the `git commit` command
+in order to supply it with my commit message using the path of least resistance
+(you will encounter significant resistance if you try doing this another way)._
+
+```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git commit -m 'my first commit'
+[my_new_branch 14e26e3] my first commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git status
+On branch my_new_branch
+nothing to commit, working tree clean
+```
 
 ### Updating your Working Branch with Origin Master
 
