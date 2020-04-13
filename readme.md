@@ -159,7 +159,8 @@ used them a few times:
 - `git checkout <branch_to_checkout>` - checks out the branch named
   `<branch_to_checkout>`
 - `git status` - shows the working tree status, i.e. the changes you've made
-  since your last commit
+  since your last commit - this command has no external effects and can be run
+  "for free" at any time
 - `git add <file1> <file2>` - add changed files `file1` and `file2` to the
   "staging area" so you can commit them
   - You can use `git add -A` to add all changed files rather than typing them
@@ -258,13 +259,24 @@ When you work on code, `git` tracks your changes (modified, added, deleted
 files and directories). When you are ready to commit your changes (i.e. create
 a "save point" in the project's history), you have to tell `git` which changes
 to include in the commit. Most of the time, you will include all changes, but
-sometimes it can be useful to be able to exclude the changes you have made to
-some files.
+sometimes it can be handy to be able to exclude changes to some files.
 
 To do this, we use the staging area:
 
 ![Git Working Tree and Staging Area](./img/git_working_tree.png)
 Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
+
+So as you make changes to the files on your working branch, they are saved
+on your `working tree`. At any point in time, you can run the command
+`git status` to see the status of your working tree. For example, if I add a
+new file to the project (either through Windows File Explorer or with the shell
+command `touch my_new_file.txt`), then I run `git status`, I get the following
+output:
+
+```
+
+
+```
 
 ### Updating your Working Branch with Origin Master
 
