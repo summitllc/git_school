@@ -303,7 +303,26 @@ Changes to be committed:
 
 Now `git` is telling me that `my_new_file.txt` is staged to be committed. The
 figure above gives a visual reference of how I just used `git add` to move
-changes from the `working tree` to the `staging area`.
+changes from the `working tree` to the `staging area`. Now we can modify
+`my_new_file.txt` and see what happens when you change a file `git` is already
+tracking. After opening the file, adding some text to it ("Hello, World!"), and
+saving it, I run `git status`:
+
+```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git status
+On branch my_new_branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_new_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+This output is very similar to the previous `git status`, except now
+`my_new_file.txt` is already being tracked but `git` recognized that it has been
+modified.
 
 ### Updating your Working Branch with Origin Master
 
