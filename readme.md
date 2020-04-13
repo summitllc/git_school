@@ -274,9 +274,36 @@ command `touch my_new_file.txt`), then I run `git status`, I get the following
 output:
 
 ```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git status
+On branch my_new_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        my_new_file.txt
 
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+This is telling me that `git` recognizes a new file (one that it is not already
+tracking). `git` also gives me a hint on how to add this file to be tracked.
+It says to 'use "git add \<file>..." to include in what wil be committed'. Let's
+give that a try, then check out `git status` again:
 
 ```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git add my_new_file.txt
+
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+$ git status
+On branch my_new_branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   my_new_file.txt
+```
+
+Now `git` is telling me that `my_new_file.txt` is staged to be committed. The
+figure above gives a visual reference of how I just used `git add` to move
+changes from the `working tree` to the `staging area`.
 
 ### Updating your Working Branch with Origin Master
 
