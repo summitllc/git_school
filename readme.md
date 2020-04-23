@@ -367,6 +367,48 @@ making a change, and merging it to master:
 - [ ] Check status, add, commit, and push. If any of these steps don't make
       sense yet, don't worry, we will describe them in more detail later.
 
+```
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
+$ git status
+On branch teammate_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sandbox/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
+$ git add -A
+
+thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
+$ git commit -m 'added teammate_file.R to project'
+[teammate_branch 7eb7c39] added teammate_file.R to project
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 sandbox/teammate_file.R
+
+ thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
+$ git push origin teammate_branch
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1.15 KiB | 1.15 MiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0), pack-reused 0
+remote:
+remote: To create a merge request for teammate_branch, visit:
+remote:   http://f3-git.summit.local/data-science-team/git-school/merge_requests/new?merge_request%5Bsource_branch%5D=teammate_branch
+remote:
+To f3-git.summit.local:data-science-team/git-school.git
+ * [new branch]      teammate_branch -> teammate_branch
+```
+
+- [ ] On `f3-git.summit.local` make a Merge Request to merge `teammate_branch`
+      into `master` and accept the merge request:
+
+![Submitting a Merge Request on GitLab](./img/create_merge_request.png "Submitting a Merge Request on GitLab")
+
+![Accepting a Merge Request on GitLab](./img/accept_merge_request.png "Accepting a Merge Request on GitLab")
+
 ### Pushing Your Working Branch to Origin
 
 ### Merging Your Working Branch into Remote Origin
