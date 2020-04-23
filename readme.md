@@ -409,6 +409,7 @@ To f3-git.summit.local:data-science-team/git-school.git
 
 ![Accepting a Merge Request on GitLab](./img/accept_merge_request.png "Accepting a Merge Request on GitLab")
 
+<<<<<<< HEAD
 With a new commit on `master`, let's update our working branch (not forgetting
 to check it out first), but pulling `origin master` into it:
 
@@ -421,6 +422,8 @@ TODO - this is where I had to stop
 
 ```
 
+=======
+>>>>>>> 9b3ddf66d2de1871fffafa25b95ddb2e491220fc
 ### Pushing Your Working Branch to Origin
 
 ### Merging Your Working Branch into Remote Origin
