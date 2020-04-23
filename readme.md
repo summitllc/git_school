@@ -350,6 +350,23 @@ nothing to commit, working tree clean
 
 ### Updating your Working Branch with Origin Master
 
+At this point, let's imagine that you've been doing development on your working
+branch for a while now. For demonstration's sake, let's say a week. If it
+branched off from `master` a week ago, your teammates may have been adding
+features to the master branch during that week, none of which you have in your
+branch. You want to periodically merge their changes into your working branch to
+check for conflicts resulting in either errors or adverse effects in the
+project.
+
+Let's simulate your teammates making changes to master by checking out a branch,
+making a change, and merging it to master:
+
+- [ ] Checkout a new branch: `git checkout -b teammate_branch`
+- [ ] Make a change in the project. For example, I will add a file:
+      `sandbox/teammate_file.R`
+- [ ] Check status, add, commit, and push. If any of these steps don't make
+      sense yet, don't worry, we will describe them in more detail later.
+
 ### Pushing Your Working Branch to Origin
 
 ### Merging Your Working Branch into Remote Origin
