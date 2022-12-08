@@ -1,7 +1,8 @@
 # Git School Yearbook
-Please add your name to this file if you have completed this course. 
+Please add your name (and preferred programming language) to this file if you have completed this course. 
 
 ## Authors
-**Tyler Whitaker**: I helped write this course. My preferred programming language is python. 🐍
+**Thomas Gardner**: Original author of this course.
+**Tyler Whitaker**: I added some additional content to this course. My preferred programming language is python. 🐍
 
 ## Students
