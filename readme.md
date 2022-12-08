@@ -8,9 +8,9 @@ Credit: XKCD, https://xkcd.com/1597/
 
 The goal of `git-school` is to get you up and running with the following:
 
-- a SSH key that you can use to authenticate into our GitLab server (rather than
+- a SSH key that you can use to authenticate into our GitHub server (rather than
   typing your username and password constantly)
-- an account on our GitLab server
+- an account on our GitHub Organization account
 - a basic conceptual understanding of `git`
 - a basic `git` workflow for coding collaboratively with other Summiteers
 
@@ -31,7 +31,7 @@ Check that you successfully installed `git` by:
 
 ## Set up Secure Shell (SSH) Authentication
 
-Each time you request resources from the GitLab server, you have to authenticate
+Each time you request resources from Summit's GitHub Organization, you have to authenticate
 yourself, proving that you have the permissions required to access that
 resource. Most people do this via SSH rather than typing a username and
 password in repeatedly:
@@ -46,47 +46,49 @@ password in repeatedly:
   - `/c/Users/<first.last>/.ssh/`
 - [ ] You should see two new files:
   - `id_rsa` is your new private key - DO NOT share this with anyone
-  - `id_rsa.pub` is your new public key - you will place this on the GitLab
-    server, under your account settings, to authenticate against (with your
-    private key, hence "keypair") - note: Windows attempts to associate the
-    `.pub` extension with Microsoft Publisher. Ignore this.
+  - `id_rsa.pub` is your new public key - you will place this in your GitHub
+   account, to authenticate against (with your private key, hence "keypair") 
+   - note: Windows attempts to associate the `.pub` extension with Microsoft 
+   Publisher. Ignore this.
 
 ### Associate Public Key with GitLab Account
 
-- [ ] Go to the desired GitLab server (typically http://f3-git.summit.local/)
-- [ ] If you don't already have one, create an account
-- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH Keys`
+- [ ] Log into your GitHub account that is associated with Summit's Git Organization.
+  - [ ] If you don't have an account on GitHub, first create an account. 
+  - [ ] After the account has been created, reach out to the IT Department to have them invite you to Summit's Organization. 
+    - GitHub recommends having one account to manage both your personal and professional projects. There are easy methods of removing yourself from your organization after you leave Summit. 
+  - [ ] Enable 2FA after joining Summit's organization. 
+- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH and GPG keys`
 - [ ] Back in File Explorer, open your public key in a text editor
   - [ ] Right-click on `id_rsa.pub` &rarr; 'Open With' &rarr; 'Notepad',
         for example
-- [ ] In GitLab, copy the entire contents of your public key into the 'Key'
-      section
-- [ ] Click into the 'Title' field. It should auto-populate with your email
-      address, but you can change this to something more descriptive if you desire.
-  - For example: `YYYYMMDD_Summit_laptop`
-- [ ] Click 'Add key'
+- [ ] In GitHub, click `New SSH key`.
+- [ ] Paste the contents of `id_rsa.pub` into the text box under "Key". 
+- [ ] Add a title to this key.
+  - I like to give the title something descriptive like `YYYYMMDD_Summit_laptop`
+- [ ] Click "Add SSH key"
+  - Note for people who use multiple accounts: The same SSH Key cannot be used by multiple accounts, i.e. you cannot use a key on your personal account _and_ your work account. It is possible to use multiple keys on a single computer, but I will let those who feel confident configure that for themselves. This approach is not recommended. 
 
 ### Clone a Project (this one!) to Test Everything So Far
 
-- [ ] Go to the GitLab page for this project:
-      http://f3-git.summit.local/data-science-team/git-school.
-- [ ] Copy the SSH URL for the project, which is located just underneath the
-      title, `git-school` - ensure it says `SSH`, not `HTTP`, just to the left
-      of the URL
+- [ ] Go to the GitHub page for this project:
+      https://github.com/summitllc/git_school.
+- [ ] Copy the SSH URL for the project. View the url by by selecting the green `<> Code` Button above the file explorer box, the selecting the SSH tab. The url should take the form `git@github.com:<owner of repo>/<name of repo>.git`
 - [ ] In `Git Bash`, navigate to the directory where you want to create your
       local copy of this project (I recommend your Documents folder,
       `C:/Users/<first.last>/Documents`)
   - [ ] `cd ~/Documents`
 - [ ] Clone the project with
-      `git clone git@f3-git.summit.local:data-science-team/git-school.git`
+      `git clone <url you copied in previous step>`
 
   - If you get the message below, answer `yes` to continue:
-
-        ```
-        The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
-        ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
-        Are you sure you want to continue connecting (yes/no/[fingerprint])?
-        ```
+  ```
+    Cloning into 'test_folder'...
+    The authenticity of host 'github.com (20.201.28.151)' can't be established.
+    ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
@@ -185,7 +187,7 @@ associated with a remote repository.
 
 ```
 cd ~/Documents
-git clone git@f3-git.summit.local:data-science-team/git-school.git
+git clone git@github.com:summitllc/git_school.git
 ```
 
 _Note: In this example, the first line changes my working directory to my
