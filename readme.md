@@ -213,6 +213,9 @@ if your working directory is, in fact, a `git` repo:
 $ git branch
 * master
 ```
+_Note_: Whenever you see a `$` at the beginning of a command, such as above with 
+`$ git branch`, the text _after_ the `$` is what you will type into Git Bash.
+The text that follows that line is the output you should expect to see. 
 
 We discussed how it's best practice to do your development on a working branch,
 rather than on master. So, let's make a new branch by passing an additional
@@ -269,7 +272,7 @@ last thing you want to do is accidentally commit credentials (username, password
 security keys, etc.) to a plain text file. Those are hard to remove once committed
 and cause major security concerns even when committed to a private repo.
 
-To do this, we use the staging area:
+Below is a diagram of what the typical git workflow looks like. 
 
 ![Git Working Tree and Staging Area](./img/git_working_tree.png)_Git Workflow_
 
