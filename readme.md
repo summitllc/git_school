@@ -208,7 +208,6 @@ an asterisk is the branch you currently have checked out. Also notice that
 if your working directory is, in fact, a `git` repo:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
 ```
@@ -228,7 +227,6 @@ like "tom_branch"._
 Now, if you run `git branch` again, you will see your new branch:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
   my_new_branch
@@ -277,7 +275,6 @@ command `touch my_new_file.txt`), then I run `git status`, I get the following
 output:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Untracked files:
@@ -293,10 +290,8 @@ It says to 'use "git add \<file>..." to include in what wil be committed'. Let's
 give that a try, then check out `git status` again:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git add my_new_file.txt
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes to be committed:
@@ -312,7 +307,6 @@ tracking. After opening the file, adding some text to it ("Hello, World!"), and
 saving it, I run `git status`:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes not staged for commit:
@@ -339,12 +333,18 @@ in order to supply it with my commit message using the path of least resistance
 (you will encounter significant resistance if you try doing this another way)._
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git commit -m 'my first commit'
 [my_new_branch 14e26e3] my first commit
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+As a best practice, commit messages should be specific and descriptive the changes made. 
+To assist in this, you should save commits often and in small chunks. Following these
+practices will leave a clearer trail of breadcrumbs for you and whoever come to work 
+on the project after you to follow thought processes, methods that were attempted but 
+were ultimately scrapped.
+
+After saving the commit, our working tree is now clean. We can see such by executing the following.
+```
 $ git status
 On branch my_new_branch
 nothing to commit, working tree clean
@@ -370,7 +370,6 @@ making a change, and merging it to master:
       sense yet, don't worry, we will describe them in more detail later.
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git status
 On branch teammate_branch
 Untracked files:
@@ -379,16 +378,13 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git add -A
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git commit -m 'added teammate_file.R to project'
 [teammate_branch 7eb7c39] added teammate_file.R to project
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 sandbox/teammate_file.R
 
- thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git push origin teammate_branch
 Enumerating objects: 10, done.
 Counting objects: 100% (10/10), done.
@@ -415,7 +411,6 @@ With a new commit on `master`, let's update our working branch (not forgetting
 to check it out first), but pulling `origin master` into it:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git checkout my_new_branch
 Switched to branch 'my_new_branch'
 
