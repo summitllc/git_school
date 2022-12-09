@@ -29,6 +29,8 @@ Check that you successfully installed `git` by:
 - [ ] If you do not have `Git Bash` installed, or if you get an error from
       `git --version`, you have a problem.
 
+_Minor Note:_ Any of the git commands below will work in any command line shell where git is available. This includes command prompt (cmd) PowerShell, or Bash on a linux machine. For this tutorial, we will assume you are using Git Bash. 
+
 ## Set up Secure Shell (SSH) Authentication
 
 Each time you request resources from Summit's GitHub Organization, you have to authenticate
@@ -222,7 +224,11 @@ git branch my_new_branch
 
 _Note_: in practice, you should give your branches names descriptive of what
 feature is being developed, what bug is being fixed, etc., rather than something
-like "tom_branch"._
+like "tom_branch". Additionally, most git tools can group branches together if 
+you use names like `feature/new_feature` or `bugfix/pesky_bug`. Using this naming 
+scheme can put them into a folder like structure and thus, easier to find in tools 
+that support this feature (or at least, they will be alphabetized by the branch 
+type). It also can make it easier to determine what a specific branch is supposed to be.
 
 Now, if you run `git branch` again, you will see your new branch:
 
@@ -258,8 +264,10 @@ and the **Staging Area**:
 When you work on code, `git` tracks your changes (modified, added, deleted
 files and directories). When you are ready to commit your changes (i.e. create
 a "save point" in the project's history), you have to tell `git` which changes
-to include in the commit. Most of the time, you will include all changes, but
-sometimes it can be handy to be able to exclude changes to some files.
+to include in the commit. Be very specific about what changes you commit. The 
+last thing you want to do is accidentally commit credentials (username, password,
+security keys, etc.) to a plain text file. Those are hard to remove once committed
+and cause major security concerns even when committed to a private repo.
 
 To do this, we use the staging area:
 
@@ -267,8 +275,8 @@ To do this, we use the staging area:
 
 Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
 
-So as you make changes to the files on your working branch, they are saved
-on your `working tree`. At any point in time, you can run the command
+On the left is the `working tree`. As you work, changes to files are stored in your
+`working tree`. At any point in time, you can run the command
 `git status` to see the status of your working tree. For example, if I add a
 new file to the project (either through Windows File Explorer or with the shell
 command `touch my_new_file.txt`), then I run `git status`, I get the following
@@ -328,14 +336,15 @@ that up with a `git status` to demonstrate that my working tree will be clean
 following a commit (i.e. I won't have any changes since my last commit
 immediately after committing).
 
-_Note: I am going to add the `-m` option or "flag" to the `git commit` command
-in order to supply it with my commit message using the path of least resistance
-(you will encounter significant resistance if you try doing this another way)._
-
 ```
 $ git commit -m 'my first commit'
 [my_new_branch 14e26e3] my first commit
  1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+The flag `-m` followed by a string of text provides a short message or description 
+about the changes being saved in this commit. When omitted, you will be prompted to 
+enter a message in whatever editor was selected as the default when installing git.
 
 As a best practice, commit messages should be specific and descriptive the changes made. 
 To assist in this, you should save commits often and in small chunks. Following these
