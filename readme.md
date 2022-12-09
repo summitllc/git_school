@@ -8,9 +8,9 @@ Credit: XKCD, https://xkcd.com/1597/
 
 The goal of `git-school` is to get you up and running with the following:
 
-- a SSH key that you can use to authenticate into our GitLab server (rather than
+- a SSH key that you can use to authenticate into our GitHub server (rather than
   typing your username and password constantly)
-- an account on our GitLab server
+- an account on our GitHub Organization account
 - a basic conceptual understanding of `git`
 - a basic `git` workflow for coding collaboratively with other Summiteers
 
@@ -26,12 +26,14 @@ Check that you successfully installed `git` by:
 - [ ] Opening the `Git Bash` application
 - [ ] In the `Git Bash` terminal that opens, issue this command: `git --version`
   - See [linux_command_line.md](./linux_command_line.md) for a short tutorial on using `Git Bash`
-- [ ] If you do not have `Git Bash` installed or you get an error from
+- [ ] If you do not have `Git Bash` installed, or if you get an error from
       `git --version`, you have a problem.
+
+_Minor Note:_ Any of the git commands below will work in any command line shell where git is available. This includes command prompt (cmd) PowerShell, or Bash on a linux machine. For this tutorial, we will assume you are using Git Bash. 
 
 ## Set up Secure Shell (SSH) Authentication
 
-Each time you request resources from the GitLab server, you have to authenticate
+Each time you request resources from Summit's GitHub Organization, you have to authenticate
 yourself, proving that you have the permissions required to access that
 resource. Most people do this via SSH rather than typing a username and
 password in repeatedly:
@@ -46,47 +48,49 @@ password in repeatedly:
   - `/c/Users/<first.last>/.ssh/`
 - [ ] You should see two new files:
   - `id_rsa` is your new private key - DO NOT share this with anyone
-  - `id_rsa.pub` is your new public key - you will place this on the GitLab
-    server, under your account settings, to authenticate against (with your
-    private key, hence "keypair") - note: Windows attempts to associate the
-    `.pub` extension with Microsoft Publisher. Ignore this.
+  - `id_rsa.pub` is your new public key - you will place this in your GitHub
+   account, to authenticate against (with your private key, hence "keypair") 
+   - note: Windows attempts to associate the `.pub` extension with Microsoft 
+   Publisher. Ignore this.
 
 ### Associate Public Key with GitLab Account
 
-- [ ] Go to the desired GitLab server (typically http://f3-git.summit.local/)
-- [ ] If you don't already have one, create an account
-- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH Keys`
+- [ ] Log into your GitHub account that is associated with Summit's Git Organization.
+  - [ ] If you don't have an account on GitHub, first create an account. 
+  - [ ] After the account has been created, reach out to the IT Department to have them invite you to Summit's Organization. 
+    - GitHub recommends having one account to manage both your personal and professional projects. There are easy methods of removing yourself from your organization after you leave Summit. 
+  - [ ] Enable 2FA after joining Summit's organization. 
+- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH and GPG keys`
 - [ ] Back in File Explorer, open your public key in a text editor
   - [ ] Right-click on `id_rsa.pub` &rarr; 'Open With' &rarr; 'Notepad',
         for example
-- [ ] In GitLab, copy the entire contents of your public key into the 'Key'
-      section
-- [ ] Click into the 'Title' field. It should auto-populate with your email
-      address, but you can change this to something more descriptive if you desire.
-  - For example: `YYYYMMDD_Summit_laptop`
-- [ ] Click 'Add key'
+- [ ] In GitHub, click `New SSH key`.
+- [ ] Paste the contents of `id_rsa.pub` into the text box under "Key". 
+- [ ] Add a title to this key.
+  - I like to give the title something descriptive like `YYYYMMDD_Summit_laptop`
+- [ ] Click "Add SSH key"
+  - Note for people who use multiple accounts: The same SSH Key cannot be used by multiple accounts, i.e. you cannot use a key on your personal account _and_ your work account. It is possible to use multiple keys on a single computer, but I will let those who feel confident configure that for themselves. This approach is not recommended. 
 
 ### Clone a Project (this one!) to Test Everything So Far
 
-- [ ] Go to the GitLab page for this project:
-      http://f3-git.summit.local/data-science-team/git-school.
-- [ ] Copy the SSH URL for the project, which is located just underneath the
-      title, `git-school` - ensure it says `SSH`, not `HTTP`, just to the left
-      of the URL
+- [ ] Go to the GitHub page for this project:
+      https://github.com/summitllc/git_school.
+- [ ] Copy the SSH URL for the project. View the url by by selecting the green `<> Code` Button above the file explorer box, the selecting the SSH tab. The url should take the form `git@github.com:<owner of repo>/<name of repo>.git`
 - [ ] In `Git Bash`, navigate to the directory where you want to create your
       local copy of this project (I recommend your Documents folder,
       `C:/Users/<first.last>/Documents`)
   - [ ] `cd ~/Documents`
 - [ ] Clone the project with
-      `git clone git@f3-git.summit.local:data-science-team/git-school.git`
+      `git clone <url you copied in previous step>`
 
   - If you get the message below, answer `yes` to continue:
-
-        ```
-        The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
-        ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
-        Are you sure you want to continue connecting (yes/no/[fingerprint])?
-        ```
+  ```
+    Cloning into 'test_folder'...
+    The authenticity of host 'github.com (20.201.28.151)' can't be established.
+    ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
@@ -136,10 +140,10 @@ but with `git` we can periodically sync them back up.
 When first starting to use `git`, some people have trouble keeping the concepts
 of repositories and branches separate. Keep in mind that:
 
-- if you have a local repo, then you have all of the branches that were on the
+- If you have a local repo, then you have all of the branches that were on the
   remote repo the last time you synced-up with it (`git fetch`), plus any
   branches or commits that you have created locally
-- until you send any local changes to the remote repo (`git push`), they exist
+- Until you send any local changes to the remote repo (`git push`), they exist
   only locally and your teammates will not see them when they sync to the
   remote (`git fetch`)
 
@@ -175,9 +179,9 @@ used them a few times:
 ### Cloning a Repo
 
 For now, we are going to assume you want to work on an existing project. To do
-this, you are going to use the `git clone` command, which is something you may
+this, you are going to use the `git clone` command, which is something you should
 have done above to test that your SSH key is working. `git clone` will create
-a new local respository (in the directory where you execute the command)
+a new local repository (in the directory where you execute the command)
 associated with a remote repository.
 
 - [ ] If you haven't already done so, clone this repository with the following
@@ -185,13 +189,13 @@ associated with a remote repository.
 
 ```
 cd ~/Documents
-git clone git@f3-git.summit.local:data-science-team/git-school.git
+git clone git@github.com:summitllc/git_school.git
 ```
 
-_Note: In this example, the first line changes my working directory to my
-Documents, which is where I am choosing to create my local repository._
+_Note_: In this example, the first line changes my working directory to my
+Documents, which is where I am choosing to create my local repository.
 
-After this command runs, check for a new directory named `git-school`in your
+After this command runs, check for a new directory named `git-school` in your
 working directory. Navigate to this new directory in File Explorer. If you
 have enabled viewing of hidden items, you will notice a `.git` directory
 in this directory. This `.git` directory is what makes its parent directory a
@@ -206,10 +210,12 @@ an asterisk is the branch you currently have checked out. Also notice that
 if your working directory is, in fact, a `git` repo:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
 ```
+_Note_: Whenever you see a `$` at the beginning of a command, such as above with 
+`$ git branch`, the text _after_ the `$` is what you will type into Git Bash.
+The text that follows that line is the output you should expect to see. 
 
 We discussed how it's best practice to do your development on a working branch,
 rather than on master. So, let's make a new branch by passing an additional
@@ -219,21 +225,24 @@ argument, the name of our new branch, to `git branch <new_branch_name>`:
 git branch my_new_branch
 ```
 
-_Note: in practice, you should give your branches names descriptive of what
+_Note_: in practice, you should give your branches names descriptive of what
 feature is being developed, what bug is being fixed, etc., rather than something
-like "tom_branch"._
+like "tom_branch". Additionally, most git tools can group branches together if 
+you use names like `feature/new_feature` or `bugfix/pesky_bug`. Using this naming 
+scheme can put them into a folder like structure and thus, easier to find in tools 
+that support this feature (or at least, they will be alphabetized by the branch 
+type). It also can make it easier to determine what a specific branch is supposed to be.
 
 Now, if you run `git branch` again, you will see your new branch:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
   my_new_branch
 ```
 
 Notice that we still have `master` checked out. Use `git checkout my_new_branch`
-to checkout your newly created branch.
+to check out your newly created branch.
 
 That's it for creating a new branch, but I will point out one nice shortcut to
 impress people at parties. You can accomplish both of these steps (creating and
@@ -244,7 +253,7 @@ checking out a new branch) in one simple command. It uses the `-b` option or
 git checkout -b my_new_branch
 ```
 
-### Adding and Commiting Changes to your Working Branch
+### Adding and Committing Changes to your Working Branch
 
 Now that you have created and checked out a working branch, you are ready to
 get writing code. This section demonstrates how to make a commit to the
@@ -258,24 +267,25 @@ and the **Staging Area**:
 When you work on code, `git` tracks your changes (modified, added, deleted
 files and directories). When you are ready to commit your changes (i.e. create
 a "save point" in the project's history), you have to tell `git` which changes
-to include in the commit. Most of the time, you will include all changes, but
-sometimes it can be handy to be able to exclude changes to some files.
+to include in the commit. Be very specific about what changes you commit. The 
+last thing you want to do is accidentally commit credentials (username, password,
+security keys, etc.) to a plain text file. Those are hard to remove once committed
+and cause major security concerns even when committed to a private repo.
 
-To do this, we use the staging area:
+Below is a diagram of what the typical git workflow looks like. 
 
 ![Git Working Tree and Staging Area](./img/git_working_tree.png)_Git Workflow_
 
 Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
 
-So as you make changes to the files on your working branch, they are saved
-on your `working tree`. At any point in time, you can run the command
+On the left is the `working tree`. As you work, changes to files are stored in your
+`working tree`. At any point in time, you can run the command
 `git status` to see the status of your working tree. For example, if I add a
 new file to the project (either through Windows File Explorer or with the shell
 command `touch my_new_file.txt`), then I run `git status`, I get the following
 output:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Untracked files:
@@ -287,14 +297,12 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 This is telling me that `git` recognizes a new file (one that it is not already
 tracking). `git` also gives me a hint on how to add this file to be tracked.
-It says to 'use "git add \<file>..." to include in what wil be committed'. Let's
+It says to 'use "git add <file>..." to include in what wil be committed'. Let's
 give that a try, then check out `git status` again:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git add my_new_file.txt
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes to be committed:
@@ -310,7 +318,6 @@ tracking. After opening the file, adding some text to it ("Hello, World!"), and
 saving it, I run `git status`:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes not staged for commit:
@@ -332,17 +339,24 @@ that up with a `git status` to demonstrate that my working tree will be clean
 following a commit (i.e. I won't have any changes since my last commit
 immediately after committing).
 
-_Note: I am going to add the `-m` option or "flag" to the `git commit` command
-in order to supply it with my commit message using the path of least resistance
-(you will encounter significant resistance if you try doing this another way)._
-
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git commit -m 'my first commit'
 [my_new_branch 14e26e3] my first commit
  1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+The flag `-m` followed by a string of text provides a short message or description 
+about the changes being saved in this commit. When omitted, you will be prompted to 
+enter a message in whatever editor was selected as the default when installing git.
+
+As a best practice, commit messages should be specific and descriptive the changes made. 
+To assist in this, you should save commits often and in small chunks. Following these
+practices will leave a clearer trail of breadcrumbs for you and whoever come to work 
+on the project after you to follow thought processes, methods that were attempted but 
+were ultimately scrapped.
+
+After saving the commit, our working tree is now clean. We can see such by executing the following.
+```
 $ git status
 On branch my_new_branch
 nothing to commit, working tree clean
@@ -361,14 +375,13 @@ project.
 Let's simulate your teammates making changes to master by checking out a branch,
 making a change, and merging it to master:
 
-- [ ] Checkout a new branch: `git checkout -b teammate_branch`
-- [ ] Make a change in the project. For example, I will add a file:
+- Checkout a new branch: `git checkout -b teammate_branch`
+- Make a change in the project. For example, I will add a file:
       `sandbox/teammate_file.R`
-- [ ] Check status, add, commit, and push. If any of these steps don't make
+- Check status, add, commit, and push. If any of these steps don't make
       sense yet, don't worry, we will describe them in more detail later.
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git status
 On branch teammate_branch
 Untracked files:
@@ -377,16 +390,13 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git add -A
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git commit -m 'added teammate_file.R to project'
 [teammate_branch 7eb7c39] added teammate_file.R to project
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 sandbox/teammate_file.R
 
- thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
 $ git push origin teammate_branch
 Enumerating objects: 10, done.
 Counting objects: 100% (10/10), done.
@@ -413,7 +423,6 @@ With a new commit on `master`, let's update our working branch (not forgetting
 to check it out first), but pulling `origin master` into it:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git checkout my_new_branch
 Switched to branch 'my_new_branch'
 
