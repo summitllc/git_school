@@ -26,7 +26,7 @@ Check that you successfully installed `git` by:
 - [ ] Opening the `Git Bash` application
 - [ ] In the `Git Bash` terminal that opens, issue this command: `git --version`
   - See [linux_command_line.md](./linux_command_line.md) for a short tutorial on using `Git Bash`
-- [ ] If you do not have `Git Bash` installed or you get an error from
+- [ ] If you do not have `Git Bash` installed, or if you get an error from
       `git --version`, you have a problem.
 
 ## Set up Secure Shell (SSH) Authentication
@@ -138,10 +138,10 @@ but with `git` we can periodically sync them back up.
 When first starting to use `git`, some people have trouble keeping the concepts
 of repositories and branches separate. Keep in mind that:
 
-- if you have a local repo, then you have all of the branches that were on the
+- If you have a local repo, then you have all of the branches that were on the
   remote repo the last time you synced-up with it (`git fetch`), plus any
   branches or commits that you have created locally
-- until you send any local changes to the remote repo (`git push`), they exist
+- Until you send any local changes to the remote repo (`git push`), they exist
   only locally and your teammates will not see them when they sync to the
   remote (`git fetch`)
 
@@ -177,9 +177,9 @@ used them a few times:
 ### Cloning a Repo
 
 For now, we are going to assume you want to work on an existing project. To do
-this, you are going to use the `git clone` command, which is something you may
+this, you are going to use the `git clone` command, which is something you should
 have done above to test that your SSH key is working. `git clone` will create
-a new local respository (in the directory where you execute the command)
+a new local repository (in the directory where you execute the command)
 associated with a remote repository.
 
 - [ ] If you haven't already done so, clone this repository with the following
@@ -190,10 +190,10 @@ cd ~/Documents
 git clone git@github.com:summitllc/git_school.git
 ```
 
-_Note: In this example, the first line changes my working directory to my
-Documents, which is where I am choosing to create my local repository._
+_Note_: In this example, the first line changes my working directory to my
+Documents, which is where I am choosing to create my local repository.
 
-After this command runs, check for a new directory named `git-school`in your
+After this command runs, check for a new directory named `git-school` in your
 working directory. Navigate to this new directory in File Explorer. If you
 have enabled viewing of hidden items, you will notice a `.git` directory
 in this directory. This `.git` directory is what makes its parent directory a
@@ -220,7 +220,7 @@ argument, the name of our new branch, to `git branch <new_branch_name>`:
 git branch my_new_branch
 ```
 
-_Note: in practice, you should give your branches names descriptive of what
+_Note_: in practice, you should give your branches names descriptive of what
 feature is being developed, what bug is being fixed, etc., rather than something
 like "tom_branch"._
 
@@ -233,7 +233,7 @@ $ git branch
 ```
 
 Notice that we still have `master` checked out. Use `git checkout my_new_branch`
-to checkout your newly created branch.
+to check out your newly created branch.
 
 That's it for creating a new branch, but I will point out one nice shortcut to
 impress people at parties. You can accomplish both of these steps (creating and
@@ -244,7 +244,7 @@ checking out a new branch) in one simple command. It uses the `-b` option or
 git checkout -b my_new_branch
 ```
 
-### Adding and Commiting Changes to your Working Branch
+### Adding and Committing Changes to your Working Branch
 
 Now that you have created and checked out a working branch, you are ready to
 get writing code. This section demonstrates how to make a commit to the
@@ -286,7 +286,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 This is telling me that `git` recognizes a new file (one that it is not already
 tracking). `git` also gives me a hint on how to add this file to be tracked.
-It says to 'use "git add \<file>..." to include in what wil be committed'. Let's
+It says to 'use "git add <file>..." to include in what wil be committed'. Let's
 give that a try, then check out `git status` again:
 
 ```
@@ -363,10 +363,10 @@ project.
 Let's simulate your teammates making changes to master by checking out a branch,
 making a change, and merging it to master:
 
-- [ ] Checkout a new branch: `git checkout -b teammate_branch`
-- [ ] Make a change in the project. For example, I will add a file:
+- Checkout a new branch: `git checkout -b teammate_branch`
+- Make a change in the project. For example, I will add a file:
       `sandbox/teammate_file.R`
-- [ ] Check status, add, commit, and push. If any of these steps don't make
+- Check status, add, commit, and push. If any of these steps don't make
       sense yet, don't worry, we will describe them in more detail later.
 
 ```
