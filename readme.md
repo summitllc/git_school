@@ -404,8 +404,54 @@ the terminal, add the files in question to the staging area, then create a commi
 Now that you have resolved the conflicts and pulled the branch into your code, you are ready to push to your remote repo 
 and submit a merge request. 
 
-### Pushing Your Working Branch to Origin
+### Pull Requests
+Once you have finished working on your branch, it is time to submit a Pull Request (sometimes also called a merge request)
+The first thing you must make sure is to commit all changes that you want merged and push those changes up to your remote
+repo.
+```  
+$ git push
 
-### Merging Your Working Branch into Remote Origin
+[add resulting text here]
+```
+We should note here that `git push` will by default push all work done on a given branch to a branch of the same name in 
+your remote repository. After navigating to the remote repo on GitHub, you will commonly find a button that looks like
+the following: 
+![Button displaying that you branch has recently been updated and is ready for a pull request](./img/comare_and_pull_button.png)
+If you see this button, you can click the green button and start the process. 
 
-### Updating your Local Master
+Alternatively, you can always navigate to the branches display and select "New pull request". 
+![Your branches in GitHub](./img/your_branches.png)
+This will bring you to the following page:
+![GitHub Pull Request Creation Page](./img/pull_request_page.png)
+On this page, you can select the branch being merged into (typically main or master), add a title and write a  
+description to explain what you pull request is changing. Be as descriptive as your team and project requires. Different 
+projects may require a specific format for this original comment. For Summit projects, please refer to your team leads 
+determine any requirements that may apply. You can also tag people, issues, and other pull requests. This behavior is 
+very common on larger open source projects where most of the collaboration happens on GitHub. This will mostly take  
+place on Teams chats and video calls for most internal projects that live in Summit's organization. Lastly, you may need 
+to add a Reviewer, Projects, Labels, or Milestones, which are all selected by interacting with the column on the left of 
+the above screenshot.
+
+Once created, you will land on a page that leads to a conversation about the Pull Request.
+![GitHub Pull Request Conversation page](./img/pull_request_conversation.png)
+This page displays any comments made, reviews that were performed, the commits created, references made in other areas
+of GitHub, and any status changes of the pull request (if it was closed, assigned to someone, if labels were added, etc.)
+Important tabs across the top to be aware of are "Checks" and "Files Changed." "Commits" simply lists the commits that 
+you (or others) have made in this branch that are different from those that are on the branch being merged into.
+
+"Checks" is applicable if your team has set up CI/CD pipelines in GitHub Actions. This page tests those pipelines to see
+if everything will run correctly if this branch is merged in. This could include things like build scripts, deployment 
+scripts, unit tests, or any other automation that your team has set up. If these checks execute correctly, then you are 
+likely in good condition to merge your code. 
+
+"Files Changed" is going to be the most important tab for your internal work at Summit. As is suggested by the name,
+this tab shows all the changes that have been made to all the files on your branch (again, only including commits that
+_don't_ already exist in your destination branch).
+![GitHub Files Changed Tab](./img/pull_request_files_changed.png)
+On the left, you will notice a file directory showing any files that have had things added, things removed, or some mix 
+of both. Scrolling through the primary column, you can see lines highlighted in green and red. Red lines show content 
+that was removed. Green shows content that was added. Git (and GitHub) try to place lines together that where a set of 
+green lines replaces a set of red lines. For example, in the screenshot, you see that _GitLab_ and _GitLab server_ are 
+highlighted in red with _GitHub_ and _GitHub Orgnaization account_ are highlighted in green. This is to suggest that the
+green text is replacing that specific red text. This doesn't always work perfectly however, so be wary of following this 
+strictly. 
