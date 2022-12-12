@@ -12,7 +12,20 @@ The goal of `git-school` is to get you up and running with the following:
   typing your username and password constantly)
 - an account on our GitHub Organization account
 - a basic conceptual understanding of `git`
-- a basic `git` workflow for coding collaboratively with other Summiteers
+- a basic `git` workflow for coding collaboratively with other Submitters
+
+## Motivation: 
+
+Software can be a very tricky thing to get exactly right. One line of bad code can cause an entire website or product to 
+crash unexpectedly. Using a **version control** system helps mitigate some of those issues by creating parallel branches and 
+creating points on those branches that can always be returned to if a critical failure occurs and cannot be fixed. It 
+also creates a history of the code that tells the story of how and why changes were made. Most critically, it encourages 
+collaboration (if used correctly) through code review as changes are merged together in some main branch that results 
+in a deliverable product. 
+
+Git is one of the most popular version control in use today and is the default option on websites like GitHub and GitLab. 
+Since Summit uses GitHub to host its repositories (commonly called repos), this course aims to teach you the 
+fundamentals of git so that you can begin using some best practices for software development. 
 
 ## Install `git`
 
@@ -482,3 +495,18 @@ are being merged. This reduces the amount of confusion around which branches are
 on, and the number of stale branches (branches that don't have any recent commits). In the event that a merge has been 
 completed, and further work need to be done on the same feature, create a new branch with a different name - it can be 
 something like `feature/branch_name_2` - and continue the work there. 
+
+### Updating local master branch
+With all you work merged in GitHub, you need to remember to bring your changes to your local repo. For that, we checkout 
+your local master branch, and run another `git pull` command. Now you are ready to create a new branch and work on 
+something new!
+
+
+### Other content in this repo: 
+This concludes the course about the most common workflow loop in git. There are other modules in this repo talking about 
+some of the following topics:
+- Using graphical interfaces of Git instead of the command line interface (wip)
+- More advanced topics like rebasing, reverting, and cherry-picking (wip)
+
+At this point, feel free to add yourself to `yearbook.md` to show off that you know how to use a very popular version 
+control tool. 
