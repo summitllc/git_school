@@ -450,8 +450,13 @@ _don't_ already exist in your destination branch).
 ![GitHub Files Changed Tab](./img/pull_request_files_changed.png)
 On the left, you will notice a file directory showing any files that have had things added, things removed, or some mix 
 of both. Scrolling through the primary column, you can see lines highlighted in green and red. Red lines show content 
-that was removed. Green shows content that was added. Git (and GitHub) try to place lines together that where a set of 
-green lines replaces a set of red lines. For example, in the screenshot, you see that _GitLab_ and _GitLab server_ are 
-highlighted in red with _GitHub_ and _GitHub Orgnaization account_ are highlighted in green. This is to suggest that the
-green text is replacing that specific red text. This doesn't always work perfectly however, so be wary of following this 
-strictly. 
+that was removed. Green shows content that was added. Both git (as a local tool on your computer) and GitHub (on the 
+website) try to place lines together that where a set of green lines replaces a set of red lines. For example, in the 
+screenshot, you see that _GitLab_ and _GitLab server_ are highlighted in red with _GitHub_ and _GitHub Organization 
+account_ are highlighted in green. This is to suggest that the green text is replacing that specific red text. 
+
+Your supervisor will likely select the green button at the top labeled "Review changes", which will enable them to make 
+comments on specific parts of the code and give approval for the branch to be merged into th destination branch. Once 
+you get approval to merge, you (or your supervisor) will return to the conversation page and select the "Merge pull 
+request" button to actually execute the merge. 
+![Merge Pull Request button](./img/merge_pull_request.png)
