@@ -8,11 +8,24 @@ Credit: XKCD, https://xkcd.com/1597/
 
 The goal of `git-school` is to get you up and running with the following:
 
-- a SSH key that you can use to authenticate into our GitLab server (rather than
+- a SSH key that you can use to authenticate into our GitHub server (rather than
   typing your username and password constantly)
-- an account on our GitLab server
+- an account on our GitHub Organization account
 - a basic conceptual understanding of `git`
-- a basic `git` workflow for coding collaboratively with other Summiteers
+- a basic `git` workflow for coding collaboratively with other Submitters
+
+## Motivation: 
+
+Software can be a very tricky thing to get exactly right. One line of bad code can cause an entire website or product to 
+crash unexpectedly. Using a **version control** system helps mitigate some of those issues by creating parallel branches and 
+creating points on those branches that can always be returned to if a critical failure occurs and cannot be fixed. It 
+also creates a history of the code that tells the story of how and why changes were made. Most critically, it encourages 
+collaboration (if used correctly) through code review as changes are merged together in some main branch that results 
+in a deliverable product. 
+
+Git is one of the most popular version control in use today and is the default option on websites like GitHub and GitLab. 
+Since Summit uses GitHub to host its repositories (commonly called repos), this course aims to teach you the 
+fundamentals of git so that you can begin using some best practices for software development. 
 
 ## Install `git`
 
@@ -26,12 +39,14 @@ Check that you successfully installed `git` by:
 - [ ] Opening the `Git Bash` application
 - [ ] In the `Git Bash` terminal that opens, issue this command: `git --version`
   - See [linux_command_line.md](./linux_command_line.md) for a short tutorial on using `Git Bash`
-- [ ] If you do not have `Git Bash` installed or you get an error from
+- [ ] If you do not have `Git Bash` installed, or if you get an error from
       `git --version`, you have a problem.
+
+_Minor Note:_ Any of the git commands below will work in any command line shell where git is available. This includes command prompt (cmd) PowerShell, or Bash on a linux machine. For this tutorial, we will assume you are using Git Bash. 
 
 ## Set up Secure Shell (SSH) Authentication
 
-Each time you request resources from the GitLab server, you have to authenticate
+Each time you request resources from Summit's GitHub Organization, you have to authenticate
 yourself, proving that you have the permissions required to access that
 resource. Most people do this via SSH rather than typing a username and
 password in repeatedly:
@@ -46,47 +61,49 @@ password in repeatedly:
   - `/c/Users/<first.last>/.ssh/`
 - [ ] You should see two new files:
   - `id_rsa` is your new private key - DO NOT share this with anyone
-  - `id_rsa.pub` is your new public key - you will place this on the GitLab
-    server, under your account settings, to authenticate against (with your
-    private key, hence "keypair") - note: Windows attempts to associate the
-    `.pub` extension with Microsoft Publisher. Ignore this.
+  - `id_rsa.pub` is your new public key - you will place this in your GitHub
+   account, to authenticate against (with your private key, hence "keypair") 
+   - note: Windows attempts to associate the `.pub` extension with Microsoft 
+   Publisher. Ignore this.
 
 ### Associate Public Key with GitLab Account
 
-- [ ] Go to the desired GitLab server (typically http://f3-git.summit.local/)
-- [ ] If you don't already have one, create an account
-- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH Keys`
+- [ ] Log into your GitHub account that is associated with Summit's Git Organization.
+  - [ ] If you don't have an account on GitHub, first create an account. 
+  - [ ] After the account has been created, reach out to the IT Department to have them invite you to Summit's Organization. 
+    - GitHub recommends having one account to manage both your personal and professional projects. There are easy methods of removing yourself from your organization after you leave Summit. 
+  - [ ] Enable 2FA after joining Summit's organization. 
+- [ ] Click on your avatar &rarr; `Settings` &rarr; `SSH and GPG keys`
 - [ ] Back in File Explorer, open your public key in a text editor
   - [ ] Right-click on `id_rsa.pub` &rarr; 'Open With' &rarr; 'Notepad',
         for example
-- [ ] In GitLab, copy the entire contents of your public key into the 'Key'
-      section
-- [ ] Click into the 'Title' field. It should auto-populate with your email
-      address, but you can change this to something more descriptive if you desire.
-  - For example: `YYYYMMDD_Summit_laptop`
-- [ ] Click 'Add key'
+- [ ] In GitHub, click `New SSH key`.
+- [ ] Paste the contents of `id_rsa.pub` into the text box under "Key". 
+- [ ] Add a title to this key.
+  - I like to give the title something descriptive like `YYYYMMDD_Summit_laptop`
+- [ ] Click "Add SSH key"
+  - Note for people who use multiple accounts: The same SSH Key cannot be used by multiple accounts, i.e. you cannot use a key on your personal account _and_ your work account. It is possible to use multiple keys on a single computer, but I will let those who feel confident configure that for themselves. This approach is not recommended. 
 
 ### Clone a Project (this one!) to Test Everything So Far
 
-- [ ] Go to the GitLab page for this project:
-      http://f3-git.summit.local/data-science-team/git-school.
-- [ ] Copy the SSH URL for the project, which is located just underneath the
-      title, `git-school` - ensure it says `SSH`, not `HTTP`, just to the left
-      of the URL
+- [ ] Go to the GitHub page for this project:
+      https://github.com/summitllc/git_school.
+- [ ] Copy the SSH URL for the project. View the url by by selecting the green `<> Code` Button above the file explorer box, the selecting the SSH tab. The url should take the form `git@github.com:<owner of repo>/<name of repo>.git`
 - [ ] In `Git Bash`, navigate to the directory where you want to create your
       local copy of this project (I recommend your Documents folder,
       `C:/Users/<first.last>/Documents`)
   - [ ] `cd ~/Documents`
 - [ ] Clone the project with
-      `git clone git@f3-git.summit.local:data-science-team/git-school.git`
+      `git clone <url you copied in previous step>`
 
   - If you get the message below, answer `yes` to continue:
-
-        ```
-        The authenticity of host 'f3-git.summit.local (192.168.75.221)' can't be established.
-        ECDSA key fingerprint is SHA256:pdXk4qTwCrYiLyU6MH125A8T89mNG0bXTLfZKI4rxyo.
-        Are you sure you want to continue connecting (yes/no/[fingerprint])?
-        ```
+  ```
+    Cloning into 'test_folder'...
+    The authenticity of host 'github.com (20.201.28.151)' can't be established.
+    ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+    This key is not known by any other names
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    ```
 
 You should have a copy of the project files in
 `C:/Users/<first.last>/Documents/git-school`.
@@ -136,10 +153,10 @@ but with `git` we can periodically sync them back up.
 When first starting to use `git`, some people have trouble keeping the concepts
 of repositories and branches separate. Keep in mind that:
 
-- if you have a local repo, then you have all of the branches that were on the
+- If you have a local repo, then you have all of the branches that were on the
   remote repo the last time you synced-up with it (`git fetch`), plus any
   branches or commits that you have created locally
-- until you send any local changes to the remote repo (`git push`), they exist
+- Until you send any local changes to the remote repo (`git push`), they exist
   only locally and your teammates will not see them when they sync to the
   remote (`git fetch`)
 
@@ -175,9 +192,9 @@ used them a few times:
 ### Cloning a Repo
 
 For now, we are going to assume you want to work on an existing project. To do
-this, you are going to use the `git clone` command, which is something you may
+this, you are going to use the `git clone` command, which is something you should
 have done above to test that your SSH key is working. `git clone` will create
-a new local respository (in the directory where you execute the command)
+a new local repository (in the directory where you execute the command)
 associated with a remote repository.
 
 - [ ] If you haven't already done so, clone this repository with the following
@@ -185,13 +202,13 @@ associated with a remote repository.
 
 ```
 cd ~/Documents
-git clone git@f3-git.summit.local:data-science-team/git-school.git
+git clone git@github.com:summitllc/git_school.git
 ```
 
-_Note: In this example, the first line changes my working directory to my
-Documents, which is where I am choosing to create my local repository._
+_Note_: In this example, the first line changes my working directory to my
+Documents, which is where I am choosing to create my local repository.
 
-After this command runs, check for a new directory named `git-school`in your
+After this command runs, check for a new directory named `git-school` in your
 working directory. Navigate to this new directory in File Explorer. If you
 have enabled viewing of hidden items, you will notice a `.git` directory
 in this directory. This `.git` directory is what makes its parent directory a
@@ -206,10 +223,12 @@ an asterisk is the branch you currently have checked out. Also notice that
 if your working directory is, in fact, a `git` repo:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
 ```
+_Note_: Whenever you see a `$` at the beginning of a command, such as above with 
+`$ git branch`, the text _after_ the `$` is what you will type into Git Bash.
+The text that follows that line is the output you should expect to see. 
 
 We discussed how it's best practice to do your development on a working branch,
 rather than on master. So, let's make a new branch by passing an additional
@@ -219,21 +238,24 @@ argument, the name of our new branch, to `git branch <new_branch_name>`:
 git branch my_new_branch
 ```
 
-_Note: in practice, you should give your branches names descriptive of what
+_Note_: in practice, you should give your branches names descriptive of what
 feature is being developed, what bug is being fixed, etc., rather than something
-like "tom_branch"._
+like "tom_branch". Additionally, most git tools can group branches together if 
+you use names like `feature/new_feature` or `bugfix/pesky_bug`. Using this naming 
+scheme can put them into a folder like structure and thus, easier to find in tools 
+that support this feature (or at least, they will be alphabetized by the branch 
+type). It also can make it easier to determine what a specific branch is supposed to be.
 
 Now, if you run `git branch` again, you will see your new branch:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
 $ git branch
 * master
   my_new_branch
 ```
 
 Notice that we still have `master` checked out. Use `git checkout my_new_branch`
-to checkout your newly created branch.
+to check out your newly created branch.
 
 That's it for creating a new branch, but I will point out one nice shortcut to
 impress people at parties. You can accomplish both of these steps (creating and
@@ -244,7 +266,7 @@ checking out a new branch) in one simple command. It uses the `-b` option or
 git checkout -b my_new_branch
 ```
 
-### Adding and Commiting Changes to your Working Branch
+### Adding and Committing Changes to your Working Branch
 
 Now that you have created and checked out a working branch, you are ready to
 get writing code. This section demonstrates how to make a commit to the
@@ -258,24 +280,25 @@ and the **Staging Area**:
 When you work on code, `git` tracks your changes (modified, added, deleted
 files and directories). When you are ready to commit your changes (i.e. create
 a "save point" in the project's history), you have to tell `git` which changes
-to include in the commit. Most of the time, you will include all changes, but
-sometimes it can be handy to be able to exclude changes to some files.
+to include in the commit. Be very specific about what changes you commit. The 
+last thing you want to do is accidentally commit credentials (username, password,
+security keys, etc.) to a plain text file. Those are hard to remove once committed
+and cause major security concerns even when committed to a private repo.
 
-To do this, we use the staging area:
+Below is a diagram of what the typical git workflow looks like. 
 
 ![Git Working Tree and Staging Area](./img/git_working_tree.png)_Git Workflow_
 
 Credit: https://www.reddit.com/r/git/comments/99ul9f/git_workflow_diagram_showcasing_the_role_of/
 
-So as you make changes to the files on your working branch, they are saved
-on your `working tree`. At any point in time, you can run the command
+On the left is the `working tree`. As you work, changes to files are stored in your
+`working tree`. At any point in time, you can run the command
 `git status` to see the status of your working tree. For example, if I add a
 new file to the project (either through Windows File Explorer or with the shell
 command `touch my_new_file.txt`), then I run `git status`, I get the following
 output:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Untracked files:
@@ -287,14 +310,12 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 This is telling me that `git` recognizes a new file (one that it is not already
 tracking). `git` also gives me a hint on how to add this file to be tracked.
-It says to 'use "git add \<file>..." to include in what wil be committed'. Let's
+It says to 'use "git add <file>..." to include in what wil be committed'. Let's
 give that a try, then check out `git status` again:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git add my_new_file.txt
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes to be committed:
@@ -310,7 +331,6 @@ tracking. After opening the file, adding some text to it ("Hello, World!"), and
 saving it, I run `git status`:
 
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git status
 On branch my_new_branch
 Changes not staged for commit:
@@ -332,23 +352,30 @@ that up with a `git status` to demonstrate that my working tree will be clean
 following a commit (i.e. I won't have any changes since my last commit
 immediately after committing).
 
-_Note: I am going to add the `-m` option or "flag" to the `git commit` command
-in order to supply it with my commit message using the path of least resistance
-(you will encounter significant resistance if you try doing this another way)._
-
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
 $ git commit -m 'my first commit'
 [my_new_branch 14e26e3] my first commit
  1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (my_new_branch)
+The flag `-m` followed by a string of text provides a short message or description 
+about the changes being saved in this commit. When omitted, you will be prompted to 
+enter a message in whatever editor was selected as the default when installing git.
+
+As a best practice, commit messages should be specific and descriptive the changes made. 
+To assist in this, you should save commits often and in small chunks. Following these
+practices will leave a clearer trail of breadcrumbs for you and whoever come to work 
+on the project after you to follow thought processes, methods that were attempted but 
+were ultimately scrapped.
+
+After saving the commit, our working tree is now clean. We can see such by executing the following.
+```
 $ git status
 On branch my_new_branch
 nothing to commit, working tree clean
 ```
 
-### Updating your Working Branch with Origin Master
+### Updating with Git Pull and Resolving Merge Conflicts
 
 At this point, let's imagine that you've been doing development on your working
 branch for a while now. For demonstration's sake, let's say a week. If it
@@ -358,71 +385,128 @@ branch. You want to periodically merge their changes into your working branch to
 check for conflicts resulting in either errors or adverse effects in the
 project.
 
-Let's simulate your teammates making changes to master by checking out a branch,
-making a change, and merging it to master:
+The branch `feature/teammate_branch` has been created to simulate the work done by a teammate. If we compare this branch 
+to master, you will see that it is some commits of master. We can `pull` that work into out branch. We do this to "resolve
+conflicts" between the two branches. Conflicts are when 2 branches have commits on the same area of code that are from about
+the same time. Git doesn't know if one is supposed to replace the other, or if they both should be included, thus prompting
+you to resolve that conflict and complete the merge.
 
-- [ ] Checkout a new branch: `git checkout -b teammate_branch`
-- [ ] Make a change in the project. For example, I will add a file:
-      `sandbox/teammate_file.R`
-- [ ] Check status, add, commit, and push. If any of these steps don't make
-      sense yet, don't worry, we will describe them in more detail later.
-
+Once we are ready to update our branch with a particular branch, we run the command  
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
-$ git status
-On branch teammate_branch
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        sandbox/
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
-$ git add -A
-
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
-$ git commit -m 'added teammate_file.R to project'
-[teammate_branch 7eb7c39] added teammate_file.R to project
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 sandbox/teammate_file.R
-
- thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (teammate_branch)
-$ git push origin teammate_branch
-Enumerating objects: 10, done.
-Counting objects: 100% (10/10), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (8/8), 1.15 KiB | 1.15 MiB/s, done.
-Total 8 (delta 4), reused 0 (delta 0), pack-reused 0
-remote:
-remote: To create a merge request for teammate_branch, visit:
-remote:   http://f3-git.summit.local/data-science-team/git-school/merge_requests/new?merge_request%5Bsource_branch%5D=teammate_branch
-remote:
-To f3-git.summit.local:data-science-team/git-school.git
- * [new branch]      teammate_branch -> teammate_branch
+$ git pull origin feature/teammate_branch      
+From github.com:summitllc/git_school
+ * branch            feature/teammate_branch -> FETCH_HEAD
+Auto-merging yearbook.md
+CONFLICT (content): Merge conflict in yearbook.md
+Automatic merge failed; fix conflicts and then commit the result.
 ```
+_Note:_ You would typically pull `origin master`, however you can pull whatever branch (local or remote) to bring those
+changes int your working branch.
 
-- [ ] On `f3-git.summit.local` make a Merge Request to merge `teammate_branch`
-      into `master` and accept the merge request:
+In the output, we see that there was an attempt to automatically merge the two branches together, which resulted in a 
+conflict. We can investigate this further by opening the affected file.  
 
-![Submitting a Merge Request on GitLab](./img/create_merge_request.png "Submitting a Merge Request on GitLab")
+![Text Generated by a Merge Conflict](./img/merge_conflict.png)
 
-![Accepting a Merge Request on GitLab](./img/accept_merge_request.png "Accepting a Merge Request on GitLab")
+We have a very specific syntax used by Git to show the conflicting section of code. In this case, we can see that 
+two students have added themselves to `yearbook.md` in the same location of the file. Git doesn't know which student 
+should actually belong there, so it kept all the content and will not let you move on until you resolve this conflict. 
 
-With a new commit on `master`, let's update our working branch (not forgetting
-to check it out first), but pulling `origin master` into it:
+At this point we need to decide which code to keep. You can those to keep only one branch, both branches, or some 
+combination of both branches , depending on your specific requirements. After resolving the conflict, you will return to 
+the terminal, add the files in question to the staging area, then create a commit, indicating that a merge was completed. 
 
+Now that you have resolved the conflicts and pulled the branch into your code, you are ready to push to your remote repo 
+and submit a merge request. 
+
+### Pull Requests
+Once you have finished working on your branch, it is time to submit a Pull Request (sometimes also called a merge request)
+The first thing you must make sure is to commit all changes that you want merged and push those changes up to your remote
+repo.
+```  
+$ git push
+
+[add resulting text here]
 ```
-thomas.gardner@LD5-006 MINGW64 ~/Documents/git-school (master)
-$ git checkout my_new_branch
-Switched to branch 'my_new_branch'
+We should note here that `git push` will by default push all work done on a given branch to a branch of the same name in 
+your remote repository. After navigating to the remote repo on GitHub, you will commonly find a button that looks like
+the following: 
 
-TODO - this is where I had to stop
+![Button displaying that you branch has recently been updated and is ready for a pull request](./img/comare_and_pull_button.png)
 
-```
+If you see this button, you can click the green button and start the process. 
 
-### Pushing Your Working Branch to Origin
+Alternatively, you can always navigate to the branches display and select "New pull request". 
+![Your branches in GitHub](./img/your_branches.png)
 
-### Merging Your Working Branch into Remote Origin
+This will bring you to the following page:
 
-### Updating your Local Master
+![GitHub Pull Request Creation Page](./img/pull_request_page.png)
+
+On this page, you can select the branch being merged into (typically main or master), add a title and write a  
+description to explain what you pull request is changing. Be as descriptive as your team and project requires. Different 
+projects may require a specific format for this original comment. For Summit projects, please refer to your team leads 
+determine any requirements that may apply. You can also tag people, issues, and other pull requests. This behavior is 
+very common on larger open source projects where most of the collaboration happens on GitHub. This will mostly take  
+place on Teams chats and video calls for most internal projects that live in Summit's organization. Lastly, you may need 
+to add a Reviewer, Projects, Labels, or Milestones, which are all selected by interacting with the column on the left of 
+the above screenshot.
+
+Once created, you will land on a page that leads to a conversation about the Pull Request.
+
+![GitHub Pull Request Conversation page](./img/pull_request_conversation.png)
+
+This page displays any comments made, reviews that were performed, the commits created, references made in other areas
+of GitHub, and any status changes of the pull request (if it was closed, assigned to someone, if labels were added, etc.)
+Important tabs across the top to be aware of are "Checks" and "Files Changed." "Commits" simply lists the commits that 
+you (or others) have made in this branch that are different from those that are on the branch being merged into.
+
+"Checks" is applicable if your team has set up CI/CD pipelines in GitHub Actions. This page tests those pipelines to see
+if everything will run correctly if this branch is merged in. This could include things like build scripts, deployment 
+scripts, unit tests, or any other automation that your team has set up. If these checks execute correctly, then you are 
+likely in good condition to merge your code. 
+
+"Files Changed" is going to be the most important tab for your internal work at Summit. As is suggested by the name,
+this tab shows all the changes that have been made to all the files on your branch (again, only including commits that
+_don't_ already exist in your destination branch).
+
+![GitHub Files Changed Tab](./img/pull_request_files_changed.png)
+
+On the left, you will notice a file directory showing any files that have had things added, things removed, or some mix 
+of both. Scrolling through the primary column, you can see lines highlighted in green and red. Red lines show content 
+that was removed. Green shows content that was added. Both git (as a local tool on your computer) and GitHub (on the 
+website) try to place lines together that where a set of green lines replaces a set of red lines. For example, in the 
+screenshot, you see that _GitLab_ and _GitLab server_ are highlighted in red with _GitHub_ and _GitHub Organization 
+account_ are highlighted in green. This is to suggest that the green text is replacing that specific red text. 
+
+Your supervisor will likely select the green button at the top labeled "Review changes", which will enable them to make 
+comments on specific parts of the code and give approval for the branch to be merged into th destination branch. Once 
+you get approval to merge, you (or your supervisor) will return to the conversation page and select the "Merge pull 
+request" button to actually execute the merge. 
+
+![Merge Pull Request button](./img/merge_pull_request.png)
+
+Once merged, you will see the following line in the conversation timeline.
+
+![Branch Merged event](./img/branch_merged.png)
+
+Your work has been successfully merged into the destination branch. It is best practice to delete all branches as they 
+are being merged. This reduces the amount of confusion around which branches are finished, which ones are being worked 
+on, and the number of stale branches (branches that don't have any recent commits). In the event that a merge has been 
+completed, and further work need to be done on the same feature, create a new branch with a different name - it can be 
+something like `feature/branch_name_2` - and continue the work there. 
+
+### Updating local master branch
+With all you work merged in GitHub, you need to remember to bring your changes to your local repo. For that, we checkout 
+your local master branch, and run another `git pull` command. Now you are ready to create a new branch and work on 
+something new!
+
+
+### Other content in this repo: 
+This concludes the course about the most common workflow loop in git. There are other modules in this repo talking about 
+some of the following topics:
+- Using graphical interfaces of Git instead of the command line interface (wip)
+- More advanced topics like rebasing, reverting, and cherry-picking (wip)
+
+At this point, feel free to add yourself to `yearbook.md` to show off that you know how to use a very popular version 
+control tool. 
