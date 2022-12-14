@@ -29,7 +29,7 @@ these are located on the left and bottom sides respectively.
 ![JetBrains Commit toolbar](img/jetbrains_commit_toolbar.png)
 
 The commit toolbar is where most of the basic functions of the git workflow live. Specifically, Staging and committing. 
-In the above screenshot, you can see two 2 windows. The top window shows all the changes that have been made in the repo. 
+In the above screenshot, you can see two windows. The top window shows all the changes that have been made in the repo. 
 Adding a file to the staging area of git is done by selecting the checkbox beside a file. Doing so add all changes to 
 the staging area.
 
