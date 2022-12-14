@@ -14,3 +14,27 @@ In this module, we will take a short tour of some popular tools and ones that ar
 - Visual Studio Code
 - RStudio
 - PyCharm (and other JetBrain IDEs)
+
+
+## PyCharm
+PyCharm use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
+fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a folder is not 
+a git repository. 
+
+The primary toolbars that manage git and version control in PyCharm are "Commit" and "Git". In my instance of PyCharm, 
+these are located on the left and bottom sides respectively. 
+
+### Commit Toolbar
+
+![JetBrains Commit toolbar](img/jetbrains_commit_toolbar.png)
+
+The commit toolbar is where most of the basic functions of the git workflow live. Specifically, Staging and committing. 
+In the above screenshot, you can see two 2 windows. The top window shows all the changes that have been made in the repo. 
+Adding a file to the staging area of git is done by selecting the checkbox beside a file. Doing so add all changes to 
+the staging area.
+
+![Selecting file for staging](img/jetbrains_staging_whole_files.png)
+
+Just below that is a text field where you will enter the message for a commit and a set of buttons to commit the 
+selected changes or to select and push those changes to your remote repository. 
+
