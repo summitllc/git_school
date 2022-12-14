@@ -16,8 +16,8 @@ In this module, we will take a short tour of some popular tools and ones that ar
 - PyCharm (and other JetBrain IDEs)
 
 
-## PyCharm
-PyCharm use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
+## JetBrains IDEs
+Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
 fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a folder is not 
 a git repository. 
 
