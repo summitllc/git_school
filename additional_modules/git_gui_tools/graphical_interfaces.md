@@ -15,6 +15,10 @@ In this module, we will take a short tour of some popular tools and ones that ar
 - RStudio
 - JetBrain IDEs, such as PyCharm, WebStorm, and Rider
 
+Many of these tools include some advanced git functionality in addition to the basics covered in the module included 
+in the root directory of this repo. These advanced functions will not be covered in this module, as they are out of the 
+intended scope. Please do your own research to discover what these options do, or review the advanced functions module. 
+
 
 ## JetBrains IDEs
 Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
