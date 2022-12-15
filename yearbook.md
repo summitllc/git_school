@@ -6,4 +6,5 @@ Please add your name (and preferred programming language) to this file if you ha
 **Tyler Whitaker**: I added some additional content to this course. My preferred programming language is python. 🐍
 
 ## Students
+
 **Thienthanh**: R change #2 
