@@ -7,5 +7,3 @@ Please add your name (and preferred programming language) to this file if you ha
 
 ## Students
 **Hayley Dykman**: Tom Gardner fangirl; prefer R
-**John Doe**: I'm not actually a student. I'm only here to cause a merge conflict. 😉 
-**Jane Doe**: A second commit to break some stuff.
