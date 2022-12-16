@@ -42,6 +42,8 @@ The following text produces the headers displayed below
 
 
 ## Git Ignore
+We'll talk about this soon. 
+we'll resume comitting this part.
 
 ## Git Large File Storage (git-lfs)
 
