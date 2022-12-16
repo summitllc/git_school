@@ -1,6 +1,10 @@
 # Git Graphical Interfaces
 _This module is a work in progress._
 
+_If you have not completed the primary module, please read through (and execute) those commands before reviewing this 
+one. While git GUI interfaces are useful, it is critical that you have an understanding of what git is, and how it works.
+This modules does not provide that._
+
 In addition to using the command line interface (cli), various products exist which offer a graphical user interface. 
 This has the potential to ease your workflow by providing buttons, selection tools, separate windows, context menus, and 
 better visuals. All the same commands are available via the cli, however, the gui applications makes them available 
