@@ -68,6 +68,13 @@ indicating that git no longer considers them as changes to the file, because the
 lines and chunks instead of committing the entire file is considered best practice as it helps avoid accidentially 
 committing things that should not be committed in the repo, such as username and password credentials, or application or
 api secret keys. 
+
+Once your changes have been committed, the button on the furthest right is to push changes, publish new branches, or 
+fetch all recent activity from GitHub, depending on whether you have changes to commit. 
+
+The last piece that is important for working in GitHub Desktop is the middle button across the top, which manages 
+branches. From that section, you can view, checkout, create, and merge (pull) branches. 
+
 ## Visual Studio Code
 The fan favorite extensible text editor includes a very minimal git widget. Selecting the branches icon will open the 
 "Source Control" toolbar. 
