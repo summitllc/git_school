@@ -56,6 +56,22 @@ _Note:_ Further functionality can be added through the use of extensions. For ex
 of the above mentioned Source Control toolbar for viewing branches, commit history on an open file, details on a 
 specific commit, and much more. I will not be covering those however, they do not come with the software by default.  
 
+
+## RStudio
+R Studio provides git functionality though it does not take a forward presence like some other text editors and IDEs. In 
+order to use version control inside RStudio, you must first open a project either by opening an existing project, 
+creating a new project, or cloning a repository. 
+- When starting a new project, you will be prompted with the option to create a git repository
+- Opening a project in an existing folder, R studio will recognize the git repository (if present)
+- When opening a project without a preexisting git repository, you can generate that by navigating to the menu bar and
+selecting `Tools > Version Control > Project Setup`. This opens a "Project Options" menu, focused on version control.
+At the top is a dropdown menu, allowing you to select which version control system you would like to use. In our case, 
+select git and press "OK", confirm the creation of a new git repository, and allow RStudio to restart. Once complete,
+git commands are now ready to be used. 
+- Cloning a repo will prompt you to include the URL of the remote repository. 
+
+[wip]
+
 ## JetBrains IDEs
 Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
 fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a folder is not 
