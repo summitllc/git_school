@@ -27,6 +27,47 @@ module included in the root directory of this repo. These advanced functions wil
  functions module. 
 
 
+## GitHub Desktop
+GitHub Desktop is a dedicated git client, meaning it's primary function is to provide git functionality. The other tools 
+shown below are primarily text editors and programming tools that offer git within the same window as the code. Some 
+Some however, prefer to have a seperate window just for git. There are many dedicated git clients (many of which are 
+referenced on [git's download page](https://git-scm.com/downloads/guis)). GitHub Desktop is only one option, however the 
+functionality and workflow will be similar across most options should you chose to try something else. 
+
+When first booting GitHub Desktop, you will be prompted to sign in to your GitHub account. Doing so will give the 
+application access to the repos you have access to. After doing so, you will see the following page:
+
+![GitHub Desktop startup page](img/github_desktop_startup.png)
+
+From here, you will need to link a repo to the application. If you are starting on a brand new application Then you can
+select "Create a New Repository on your hard drive", at which point it will ask where you want to create the repo. This 
+new dialog box mimics many parts of what you will see on creating a new repo in GitHub, with the difference of a file 
+path being requested. Most likely, you will be cloning a repository from the internet. Pressing the respective button
+opens a dialog box, prompting you to either 1. select a repo from the list of repos that you have access to or 2. give 
+a url to a repo (for example, if you were cloning from some other service, such as BitBicket, GitLab, or Azure DevOps).
+However, if you are coming here from the primary module (readme.md in the root of this repo) you likely already have 
+this repo cloned to your machine. In that case, select the last button to "Add an Existing Repository from your hard 
+drive." This will prompt you for the path to that repo. Inserting the path to your local repo opens the following page. 
+
+![GitHub Desktop open repository](img/github_desktop_open_repo.png)
+
+The column on the left shows the files that have been changed. Selecing a file will display the changes in the same way
+you see the changes during a pull request. To stage entire files, select the checkbox beside the file name. Commit those 
+changes by typing a message in the summary box below the file list and pressing the button labeled "Commit to 
+<branch_name>". 
+
+However, instead of committing the entire file, it is also possible stage and commit individual lines or sections of 
+your code. For example, using the picture above, I can choose to select only lines 4 - 7 by clicking on the line number 
+that I want and dragging the mouse through all the lines I want to commit right now.
+
+![GitHub Desktop staging part of a file.](img/github_desktop_staging_selected_lines.png)
+
+Now, those lines have turned blue, indicating that those lines are ready to be staged. The rest of the lines only show 
+changes made to the files (indicated by the typical green and red). Once committed, those lines lose their highlighting,
+indicating that git no longer considers them as changes to the file, because they have been committed. This selection 
+lines and chunks instead of committing the entire file is considered best practice as it helps avoid accidentially 
+committing things that should not be committed in the repo, such as username and password credentials, or application or
+api secret keys. 
 ## Visual Studio Code
 The fan favorite extensible text editor includes a very minimal git widget. Selecting the branches icon will open the 
 "Source Control" toolbar. 
