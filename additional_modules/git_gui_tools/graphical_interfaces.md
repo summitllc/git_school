@@ -73,10 +73,10 @@ git commands are now ready to be used.
 [wip]
 
 ## JetBrains IDEs
-Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
-fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a folder is not 
-a git repository. Screenshots in this module will come from PyCharm, though other products by JetBrains (such as 
-WebStorm and Rider) will feature similar features and UI elements.  
+Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as 
+needed to fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a 
+folder is not a git repository. Screenshots in this module will come from PyCharm, though other products by JetBrains 
+(such as WebStorm and Rider) will feature similar features and UI elements.  
 
 The primary toolbars that manage git and version control in PyCharm are "Commit" and "Git". In my instance of PyCharm, 
 these are located on the left and bottom sides respectively. 
