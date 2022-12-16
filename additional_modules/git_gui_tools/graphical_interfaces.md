@@ -27,6 +27,35 @@ module included in the root directory of this repo. These advanced functions wil
  functions module. 
 
 
+## Visual Studio Code
+The fan favorite extensible text editor includes a very minimal git widget. Selecting the branches icon will open the 
+"Source Control" toolbar. 
+
+![Visual Studio Code Version Control Toolbar](img/vs_code_git_toolbar.png)
+
+The main view of the toolbar shows all files that git registers as changed in some form or another. Each file is 
+organized into either "Staged Changes" or "Changes". Files in the "Changes" section are _not_ staged to be committed.
+Add a file to the "Staged Changes" list by clicking the plus icon on a file. Remove a file from "Staged Changes" by 
+selecting the minus icon on a file. It is possible for a file to appear in both lists, if some changes have been staged 
+and others not. Each file displays a letter at the end of the row. The letters represent the following 
+- **U**: Untracked file.
+- **A**: Added (new) file. 
+- **M**: Modified file.
+- **D**: Deleted file. 
+- **R**: Renamed file (also applied to files that have been moved to a new location in the directory)
+
+When hovering over a file, you will see 3 icons to open the file, discard all changes to that file, and to add/remove 
+to/from the staging area. Instead of staging the entire file, ranges can be staged by selecting the lines in the text 
+editor.  
+
+Once the changes have been selected, type a message and press the commit button to save the changes. More git commands 
+are available in the three dots menu above the message text field, such as creating branches, pulling and pushing 
+changes. 
+
+_Note:_ Further functionality can be added through the use of extensions. For example, GitLens adds menus at the bottom 
+of the above mentioned Source Control toolbar for viewing branches, commit history on an open file, details on a 
+specific commit, and much more. I will not be covering those however, they do not come with the software by default.  
+
 ## JetBrains IDEs
 Jetbrains products use menus that are pined to docks on the sides and bottom of the windows. These can be rearranged as needed to 
 fit your preference. They may also be hidden if you have yet to use them on a given project, such as if a folder is not 
