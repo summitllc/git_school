@@ -1,6 +1,6 @@
 # Important Concepts in Git
 Now that you have the basic concept of what git it, and how to use it, it's time to dive into some important concept 
-pertain to git and its usage, as well as some surounding topics and bits of information that need to be considered as a 
+pertain to git and its usage, as well as some surrounding topics and bits of information that need to be considered as a 
 software developer on GitHub (or other platforms like it). This list will likely be a constant work in progress, as the 
 authors come across questions and ideas that we did not consider at the time of this writing. Feel free to check in 
 frequently to see if something new has come to our attention. Additionally, if you think of something that is not 
@@ -20,7 +20,7 @@ requesting more information from the person who opened the issue.
 ## Markdown
 In case you didn't notice, you're reading a Markdown file right now. Markdown is best defined as a lightweight markup 
 langauge. Think of it as an easy and stripped down version of HTML. Markdown is the default method of documenting 
-information and instructions about your repo on GitHub (and may other locaitons for that matter). Its primary strength 
+information and instructions about your repo on GitHub (and may other locations for that matter). Its primary strength 
 is its simply syntax to rapidly format and organize your document. 
 
 Some basics of Markdown include the following characters to format the text in various ways:
@@ -28,16 +28,28 @@ Some basics of Markdown include the following characters to format the text in v
 `#`: This symbol (pound sign, hashtag, octothorp, or whatever you want to call it) is used for the various levels of 
 headers. A Single `#` will produce the HTML equivalent of `h1`. placing multiple `#` side by side will create subheaders.
 The following text produces the headers displayed below
+---
 ```
 # Header 1
+Introductory text
 ## Header 2
+Text under a second header
 ### Header 3
+More newanced text
 #### Header 4
+When will it end? 
 ```
+---
 # Header 1
+Introductory text
 ## Header 2
+Text under a second header
 ### Header 3
+More nuanced text
 #### Header 4
+When will it end? 
+
+---
 
 You can select up to 6 levels of headers, much like in HTML. 
 
@@ -52,7 +64,7 @@ ordered list (`1.`). The ordered lists would be rendered as below:
 2. second item
 3. third item
 
-One additional thing that you can include is blocks of code. The above mentioned `monospace text` is useful when 
+One additional thing that you can include is blocks of code. The above-mentioned `monospace text` is useful when 
 referencing functions, files, or other small bits of logic. However, sometimes, you want to include a longer bit of code.
 A code block needs to be wrapped by three (3) backtick characters (`). As an additional bonus, GitHub (and most other 
 renders) can provide syntax highlighting to help readability by including the name of the language just after the first 
@@ -65,10 +77,15 @@ print("hello world")
 def function_name(args1): 
     return args1[1] + 1
 ```
+Markdown is a very rich markup language that is also easy to use and read. This guide is only a brief introduction to 
+Markdown. We include it here as Markdown is the default documentation method for repositories in GitHub. The main page 
+of most GitHub repos contain a bit of introduction inside a file called `readme.md`. This file is present in this very 
+repo and is what displays on the main page of this very repo. 
 
-This is not all that Markdown can do, but this is only intended as an initial guide, as Markdown is the default 
+Markdown offers many more formatting options and capabilities than this.
+However, this document is intended as an initial guide, as Markdown is the default 
 documentation method for repos in GitHub. There are many types of programs that can edit and render Markdown files. 
-Please look further into Markdown outside of this 
+Please look further into Markdown outside this document to further explore its feature set. 
 
 ## Git Ignore
 Git ignore is a file that git recognizes to exclude tracking specific files and file types. 
