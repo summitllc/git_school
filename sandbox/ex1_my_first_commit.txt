@@ -1,0 +1,9 @@
+Fill in the blanks below, then follow the instructions in EXERCISES.md.
+
+My name: ___________________________
+
+My role at Summit: ___________________________
+
+One tool or language I use regularly: ___________________________
+
+One thing I hope to learn from this git training: ___________________________

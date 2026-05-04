@@ -1,0 +1,29 @@
+# =============================================================================
+# git_school .gitignore
+# =============================================================================
+
+# Exercise 4 practice files — these exist intentionally in the repo as
+# untracked files for trainees to practice with. Do not commit them.
+sandbox/ex4_data/*.csv
+sandbox/ex4_data/*.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
