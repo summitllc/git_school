@@ -13,8 +13,8 @@ causing a conflict that you'll need to resolve manually.
 - Deployed to staging environment
 
 ## In Progress
-
-Add your note here on your feature branch.
+I'm trying to cause a conflict!!
+Did it work?
 
 ## Blocked
 
