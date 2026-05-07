@@ -138,14 +138,4 @@ You've now completed all six modules. You know how to set up git, understand how
 follow the full commit and PR workflow, resolve merge conflicts, and use the most valuable
 day-to-day commands.
 
-**Capstone Exercise:** Put it all together by adding yourself to `yearbook.md`:
-1. Create a branch off of `main`: `git checkout -b training/<your-name>/yearbook`
-2. Add your name and preferred language/tool to the file
-3. Commit and push your branch
-4. Open a Pull Request into `main` on GitHub
-
-Once your PR is merged, you're officially a git-school graduate.
-
----
-
 **Previous:** [Module 5 - Pull Requests](./05_pull_requests.md) | [Back to Course Overview](./readme.md)

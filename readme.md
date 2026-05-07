@@ -38,13 +38,6 @@ Work through these in order:
 | [Module 5](./05_pull_requests.md) | Pull Requests — pushing, opening PRs, and code review |
 | [Module 6](./06_useful_commands.md) | Useful Commands — `.gitignore`, `git log`, `git diff`, `git stash` |
 
-## Capstone Exercise
-
-Once you've completed the modules, sign the yearbook by going through the full
-workflow: create a branch, edit [yearbook.md](./yearbook.md), commit, push, and open a Pull Request into `main`.
-
-_Don't see a yearbook.md? Ask your facilitator — it may be set up as a separate exercise branch._
-
 ## Other Resources
 
 ### This Repo
