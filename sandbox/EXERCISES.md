@@ -87,26 +87,22 @@ will have you create additional branches off of it.
 
 ## Exercise 4 — The .gitignore 🟡 Intermediate
 
-**Goal:** Update the root `.gitignore` file to prevent sensitive or irrelevant files from being tracked.
+**Goal:** Update `.gitignore` to prevent sensitive or irrelevant files from being tracked.
 
 **Files:** `sandbox/ex4_data/`
 
 **Steps:**
 1. Make sure you're on your training branch: `git checkout training/<your-name>`
-2. Navigate to the `sandbox/ex4_data/` folder and look at its contents
-3. If `secrets.env` and some CSV files are not already present, create a few dummy files to practice with, for example:
-    - `touch sandbox/ex4_data/secrets.env`
-    - `touch sandbox/ex4_data/data1.csv`
-    - `touch sandbox/ex4_data/data2.csv`
- 4. Run `git status` so you can see which files in `sandbox/ex4_data/` are currently untracked
- 5. Open the `.gitignore` file at the **root of the repo** (create it if it does not exist)
- 6. Add rules to ignore:
-    - All `.env` files (hint: `*.env`)
-    - All `.csv` files (hint: `*.csv`)
-    - But leave `analysis.R` tracked
-7. Run `git status` again — the `.env` and `.csv` files in `sandbox/ex4_data/` should no longer appear
-8. Stage and commit your `.gitignore`: `git add .gitignore` then commit
-
+2. Open the `.gitignore` file at the **root of the repo** (create it only if it does not already exist)
+3. If `.gitignore` already contains rules for `sandbox/ex4_data/*.env` or `sandbox/ex4_data/*.csv`, remove those lines for now so you can observe the effect of adding them back
+4. Navigate to the `sandbox/ex4_data/` folder and look at its contents
+5. Run `git status` — notice that git wants to track everything in there, including `secrets.env` and the CSV files
+6. In the root `.gitignore`, add rules to ignore:
+   - All `.env` files (hint: `*.env`)
+   - All `.csv` files (hint: `*.csv`)
+   - But leave `analysis.R` tracked
+7. Run `git status` again — `secrets.env` and the CSV files should no longer appear
+8. Stage and commit your `.gitignore` changes: `git add .gitignore` then commit
 
 **Bonus:** Try running `git add sandbox/ex4_data/secrets.env` after adding it to `.gitignore`. What happens?
 
