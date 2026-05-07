@@ -93,8 +93,3 @@ Now you are ready to create a new branch and work on something new!
 ---
 
 **Previous:** [Module 4 - Merge Conflicts](./04_merge_conflicts.md)
-
----
-
-**Capstone Exercise:** Add yourself to `yearbook.md` by going through the full
-workflow: create a branch, edit the file, commit, push, and open a Pull Request into `main`.
