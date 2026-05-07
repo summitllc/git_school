@@ -87,21 +87,26 @@ will have you create additional branches off of it.
 
 ## Exercise 4 — The .gitignore 🟡 Intermediate
 
-**Goal:** Create a `.gitignore` file to prevent sensitive or irrelevant files from being tracked.
+**Goal:** Update the root `.gitignore` file to prevent sensitive or irrelevant files from being tracked.
 
 **Files:** `sandbox/ex4_data/`
 
 **Steps:**
 1. Make sure you're on your training branch: `git checkout training/<your-name>`
 2. Navigate to the `sandbox/ex4_data/` folder and look at its contents
-3. Run `git status` — notice that git wants to track everything in there, including `secrets.env` and the CSV files
-4. Create a new file at the **root of the repo** called `.gitignore`
-4. Add rules to ignore:
-   - All `.env` files (hint: `*.env`)
-   - All `.csv` files (hint: `*.csv`)
-   - But leave `analysis.R` tracked
-6. Run `git status` again — `secrets.env` and the CSV files should no longer appear
-7. Stage and commit your `.gitignore`: `git add .gitignore` then commit
+3. If `secrets.env` and some CSV files are not already present, create a few dummy files to practice with, for example:
+    - `touch sandbox/ex4_data/secrets.env`
+    - `touch sandbox/ex4_data/data1.csv`
+    - `touch sandbox/ex4_data/data2.csv`
+ 4. Run `git status` so you can see which files in `sandbox/ex4_data/` are currently untracked
+ 5. Open the `.gitignore` file at the **root of the repo** (create it if it does not exist)
+ 6. Add rules to ignore:
+    - All `.env` files (hint: `*.env`)
+    - All `.csv` files (hint: `*.csv`)
+    - But leave `analysis.R` tracked
+7. Run `git status` again — the `.env` and `.csv` files in `sandbox/ex4_data/` should no longer appear
+8. Stage and commit your `.gitignore`: `git add .gitignore` then commit
+
 
 **Bonus:** Try running `git add sandbox/ex4_data/secrets.env` after adding it to `.gitignore`. What happens?
 
@@ -117,7 +122,7 @@ will have you create additional branches off of it.
 
 **Steps:**
 1. Make sure you're on your training branch and create a new branch off of it: `git checkout training/<your-name>` then `git checkout -b feature/my-notes`
-2. Open `sandbox/ex5_team_notes.txt` and add a note **in the "In Progress" section**
+2. Open `sandbox/ex5_team_notes.txt` and replace the placeholder line **under the "In Progress" section** with your own note _(do not add a new line elsewhere in the section)
 3. Stage and commit your change
 4. Now pull the pre-built conflicting branch into your branch:
    `git pull origin feature/conflict-notes`
