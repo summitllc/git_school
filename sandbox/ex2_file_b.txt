@@ -1,0 +1,6 @@
+This is File B.
+
+Edit this file as part of Exercise 2 — Selective Staging.
+Add any text you like on a new line below, then follow the steps in EXERCISES.md.
+
+Your changes:

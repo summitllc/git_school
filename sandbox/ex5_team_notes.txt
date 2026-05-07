@@ -1,0 +1,21 @@
+# Team Notes
+
+This file is used for Exercise 5 — Resolve a Merge Conflict.
+Both you and a "teammate" will add a note to the In Progress section,
+causing a conflict that you'll need to resolve manually.
+
+---
+
+## Completed
+
+- Set up repo structure
+- Wrote initial data ingestion script
+- Deployed to staging environment
+
+## In Progress
+
+Add your note here on your feature branch.
+
+## Blocked
+
+- Waiting on access to production database

@@ -1,0 +1,12 @@
+# Feature Branch Ideas
+
+This file is used for Exercise 3 — Create a Branch.
+
+Add your idea to the list below on your feature branch, then follow the steps in EXERCISES.md
+to see how your change disappears when you switch back to main.
+
+## Ideas List
+
+- Build a dashboard to track project status
+- Automate the weekly report generation
+- Add input validation to the data pipeline
